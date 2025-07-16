@@ -34,6 +34,68 @@ var villege=[ "shevga", "partur","thane"];
 var name=[ "ram","sham","ghansham"];
 
 // Object Example
+var Employee={
+    FirstName: "Subhash",
+    LastName: "Warkad",
+    age: 29,
+    Salary: 1000000,
+};
+var Kamgar={
+    Company: "Congnizant",
+    FirstName: "Deepak",
+    LastName: "Jadhav",
+    age:45,
+    Salary:10000,
+};
+var car={
+    color: "Red",
+    module: "Suzuki-2014",
+    type: "Manual",
+    price:"7,25,000"
+};
+var Student={
+    collegeName: "fc.college pune",
+    add: "fc road Pune",
+    branch: "Computer Science",
+    idNo: "DC-1204572"
+};
+var market={
+    vajetable: "flower",
+    fruits: "Banana",
+};
+var institute={
+    InstituteName: "TechRel",
+    Manager:"Dale",
+    NoOfClass: "05",
+};
+var Angular={
+    language1: "HTML",
+    language2: "CSS",
+    language3: "JavaScript",
+};
+var WindosOffice={
+    Office01: "World",
+    Office02: "Excel",
+    Office03: "Power Point",
+};
+var Address={
+    City: "pune",
+    Dist:"Jalna",
+    Talika:"Partur",
+};
+var GroceryShop={
+    bisket: "Parle G",
+    cremeBisket: "Borbon",
+    cofee: "nestle",
+};
+
+// Boolean.
+var IsPass= true;
+var IsFail= false;
+var IsOnline= true;
+var IsOffline= false;
+var IsOn= true;
+var IsOff= false;
 
 
 
