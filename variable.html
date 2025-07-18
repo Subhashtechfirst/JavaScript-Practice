@@ -7,75 +7,171 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 40%;
+            margin: auto;
+        }
         pre{
             padding: 5px;
             margin: 4px;
             border: 1px solid lightgray;
             background-color: lightgrey;
             border-radius: 5px;
+            
         }
     </style>
 </head>
 <body class="container">
-    <!-- <h2>
-        JavaScript First Program
+    <h2>
+        JavaScript Program
     </h2>
     <p>
         Creat a new variable and run document.wight(),console.log().
     </p>
-    <h2> Declaration Keywords:</h2>
-    <p>
-        Variables are declared using var, let, or const.
-    </p>
-    <p>
-        var: Function-scoped or globally-scoped. Allows redeclaration and reassignment.
-    </p>
-    <p>
-        let: Block-scoped. Allows reassignment but not redeclaration within the same scope.
-    </p>
-    <p>
-        const: Block-scoped. Declares a constant variable whose value cannot be reassigned after initialization.
-    </p>
+   
     <pre>
-    <b><i><u>No.1 This is a String type of variable </u></i></b>
+    <h5 class="mb-0 text-primary p-0 m-0">String type of variable</h5>
             var name_string="My First JavaScript Program";
             document.write(name_string);
             console.log(name_string);
             <b>OutPut:My First JavaScript Program</b>
     
-     <b><i><u>No.2 This is a String type of variable </u></i></b>
+     <h5 class="mb-0 text-primary p-0 m-0">String type of variable Description</h5>
             var     name_Second     =   "Second Program JavaScript"
           Variable     Name         =      Double Caught "Value"
 
     </pre>
     <pre>
-    <b><i><u>No.2 This is a Number type of variable</u></i></b>
+    <h5 class="mb-0 text-primary p-0 m-0">Number type of variable</h5>
             let name_number= 100;
             document.write(name_number);
             console.log(name_number);
             <b>OutPut: 100</b>
-    </pre> -->
-     <script src="database.js"></script>
-    <script>
-        //   import {My_Name} from 'database.js';
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Addition</h5>
+        var a=10;
+        var b=20;
+        var sum=a+b;
+        document.write('Addition: '+sum );
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Subtracion</h5>
+        var c=30;
+        var d=20;
+        var sub=c-d;
+        document.write("Subtraction: "+sub + "");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Multiplication</h5>
+        var e=40;
+        var f=50;
+        var mul=e*f;
+        document.write("Multiplication:"+ mul +"");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Division</h5>
+        var g=100;
+        var h=25;
+        var div=g/h;
+        document.write("Division:" + div +"" );
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Modulus</h5>
+        var i=11;
+        var j=5;
+        var mod=i%j;
+        document.write("Modulus:"+mod+"");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Exponentiation</h5>
+        var k=3;
+        var l=3;
+        var exp=k**l;
+        document.write("Exponentiation:"+ exp + "");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Increment</h5>
+        var Increment=11;
+        Increment++;
+        document.write("Increment:"+Increment +"");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">//Decrement</h5>
+        var Decrement=11;
+        Decrement--;
+        document.write("Decrement:"+Decrement + "");
+    </pre>
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">// Array Example</h5>
+        var fruits= ["Apple", "Banana", "Orange"];
+        var colors= ["Red", "Green", "Blue"];
+        var number= [10,20,30];
+        var day=    ["sunday", "monday", "tuesday"];
+        var month=  ["jan", "mar", "feb"];
+        var state=  ["maharashtra", "gujrat", "rajsthan"];
+        var dist=   ["jalna","pune", "nanden"];
+        var taluka= ["partur", "badnapur", "ghansawangi"];
+        var villege=[ "shevga", "partur","thane"];
+        var name=   [ "ram","sham","ghansham"];
+        <p class="mb-0 text-primary p-0 m-0"><- Run Command -></p>
+        document.write(Enter Name[Enter Value])
+        
+    </pre>
+     <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">// Object Example</h5>
+        var Employee={
+            FirstName: "Subhash",
+            LastName: "Warkad",
+            age: 29,
+            Salary: 1000000,
+        };
+        var car={
+            color: "Red",
+            module: "Suzuki-2014",
+            type: "Manual",
+            price:"7,25,000"
+        };
+        var Student={
+            collegeName: "fc.college pune",
+            add: "fc road Pune",
+            branch: "Computer Science",
+            idNo: "DC-1204572"
+        };
+        <p class="mb-0 text-primary p-0 m-0">document.write(Enter Name )</p>
+        
+     </pre>
+     <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">// Boolean Example</h5>
+            var IsPass= true;
+            var IsFail= false;
+            var IsOnline= true;
+            var IsOffline= false;
+            var IsOn= true;
+            var IsOff= false;
+                <p class="mb-0 text-primary p-0 m-0">document.write(Enter Name )</p>
+     </pre>
 
-           var name_string="OutPut : My First JavaScript Program (String)";
-            document.write(name_string);
-            console.log(name_string);
-    
+    <pre>
+        <h5 class="mb-0 text-primary p-0 m-0">// Comparesion</h5>
+        <p class="mb-0 text-primary p-0 m-0">// Grater Than //</p>
+            var RamAge=32;
+            var ShamAge=22;
+        <p class="mb-0 text-primary p-0 m-0">console.log(RamAge > ShamAge); ==>OutPut: true</p>
+        // Greater than Ans= false
+            var DizireCarPrice= 12;
+            var UrticaCarPrice= 16;
+            <p class="mb-0 text-primary p-0 m-0">// Less Than //</p>
+            var santuMark=89;
+            var bantuMark=56;
+        <p class="mb-0 text-primary p-0 m-0">console.log(santuMark > bantuMark); ==>OutPut: false</p>
+    </pre>
 
-           let name_number= 100;
-            document.write(My_Name);
-            console.log(name_number);
-
-            const name_boolean1= true;
-            const name_Boolean2= false;
-
-
-
-    </script>
-   
-    
     
 </body>
 </html>

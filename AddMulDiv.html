@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var No_1=parseInt(prompt("enter first no"));
+        var No_2=parseInt(prompt("enter second no"));
+        var ask=prompt("enter action like add, mul, etc");
+        if(ask=="add"){
+            document.write(No_1+No_2);
+        }
+        else if(ask=="mul"){
+            document.write(No_1*No_2);
+        }
+        else if(ask=="div"){
+            document.write(No_1/No_2);
+        }
+        else if(ask=="sub"){
+            document.write(No_1-No_2);
+        }
+        else if(ask=="md"){
+            document.write(No_1%No_2);
+        }
+        else{
+            document.write("can not match");
+        }
+
+        // var a=10+20+"30"+40;
+        // document.write(a);
+    </script>
+</body>
+</html>

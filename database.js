@@ -96,6 +96,89 @@ var IsOnline= true;
 var IsOffline= false;
 var IsOn= true;
 var IsOff= false;
+// Comparesion
+  // Greater than Ans= true
+var RamAge=32;
+var ShamAge=22;
+  // Greater than Ans= false
+var DizireCarPrice= 12;
+var UrticaCarPrice= 16;
+  // Less than ans= false
+var santuMark=89;
+var bantuMark=56;
+// Less than ans= true
+
+  // Equal to
+  var a=10;
+  var b=11;
+
+  var e=20;
+  var f=10;
+
+  //Less Than Equal to // greater than equal to
+  var smark=44;
+  var dmark=45;
+
+  //Simple Assignment Operator (=):
+  var x=12;
+  var y=x;
+
+  // Addition Assignment (+=): 
+  var x=10;
+  var y=5
+  y+=x;
+  console.log(y);
+
+  //Subtraction Assignment (-=):
+  var x=40;
+  x-=20;
+  console.log(x);
+
+  //Multiplication Assignment (*=):
+  var x=10;
+  var y=10;
+  x*=y;
+  console.log(x);
+
+  //Division Assignment (/=):
+  var a=10;
+  var b=5;
+  a/=b;
+  console.log(a);
+
+  //Remainder Assignment (%=):
+  var X=101;
+  var Y=2;
+  X%=Y;
+  console.log(X)
+
+  //Logical AND (&&):
+
+  var a=10;
+  var b=10;
+  console.log(a==8 && b>5 );
+  console.log(a==b && a>=b);
+//   Example
+  console.log(true && true);   // true
+  console.log(true && false);  // false
+
+  //Logical OR (||): 
+  var x=10;
+  var y=11;
+  console.log(x==y || x>y); // false
+  console.log(x==y || x<y); //true
+
+  //Logical NOT (!):
+  var a=10;
+  var b=10;
+  console.log(!(a==b)); // condition true but ans is false.
+  
+
+
+
+
+
+
 
 
 
