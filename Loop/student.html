@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <script>
+        let students = [
+    { name: "Aarav Patel", age: 14, class: "8A", address: "Delhi" },
+    { name: "Meera Sharma", age: 13, class: "7B", address: "Mumbai" },
+    { name: "Rohan Verma", age: 15, class: "9A", address: "Kolkata" },
+    { name: "Anjali Das", age: 14, class: "8B", address: "Bangalore" },
+    { name: "Nikhil Gupta", age: 13, class: "7A", address: "Hyderabad" },
+    { name: "Priya Menon", age: 12, class: "6C", address: "Chennai" },
+    { name: "Rahul Singh", age: 16, class: "10A", address: "Pune" },
+    { name: "Sneha Iyer", age: 15, class: "9B", address: "Ahmedabad" },
+    { name: "Arjun Reddy", age: 13, class: "7C", address: "Lucknow" },
+    { name: "Divya Rao", age: 12, class: "6B", address: "Nagpur" },
+    { name: "Yash Mehta", age: 14, class: "8C", address: "Indore" },
+    { name: "Kavya Jain", age: 13, class: "7A", address: "Surat" },
+    { name: "Aditya Kulkarni", age: 15, class: "9A", address: "Jaipur" },
+    { name: "Ishita Bansal", age: 12, class: "6A", address: "Patna" },
+    { name: "Manav Tiwari", age: 16, class: "10B", address: "Bhopal" },
+    { name: "Ritika Shah", age: 14, class: "8B", address: "Chandigarh" },
+    { name: "Aman Yadav", age: 13, class: "7B", address: "Noida" },
+    { name: "Sanya Kapoor", age: 15, class: "9C", address: "Ghaziabad" },
+    { name: "Harshit Roy", age: 14, class: "8A", address: "Ranchi" },
+    { name: "Nidhi Sinha", age: 12, class: "6C", address: "Guwahati" },
+    { name: "Lakshya Rana", age: 16, class: "10C", address: "Dehradun" },
+    { name: "Pooja Mishra", age: 15, class: "9B", address: "Agra" },
+    { name: "Vivek Choudhary", age: 13, class: "7C", address: "Varanasi" },
+    { name: "Tanya Joshi", age: 14, class: "8C", address: "Amritsar" },
+    { name: "Kunal Aggarwal", age: 12, class: "6A", address: "Jodhpur" },
+    { name: "Simran Kaur", age: 13, class: "7A", address: "Raipur" },
+    { name: "Dev Malik", age: 14, class: "8B", address: "Udaipur" },
+    { name: "Reema Thakur", age: 15, class: "9A", address: "Kozhikode" },
+    { name: "Varun Nair", age: 16, class: "10B", address: "Thiruvananthapuram" },
+    { name: "Aisha Khan", age: 12, class: "6B", address: "Mysore" }
+];
+
+let employees = [
+    { id: 1, name: "Rahul Mehta", age: 28, designation: "Software Engineer", salary: 55000, department: "IT" },
+    { id: 2, name: "Sneha Kapoor", age: 32, designation: "HR Manager", salary: 60000, department: "HR" },
+    { id: 3, name: "Amit Joshi", age: 26, designation: "UI/UX Designer", salary: 50000, department: "Design" },
+    { id: 4, name: "Pooja Singh", age: 30, designation: "Project Manager", salary: 75000, department: "Management" },
+    { id: 5, name: "Vikram Rao", age: 35, designation: "DevOps Engineer", salary: 68000, department: "IT" },
+    { id: 6, name: "Kiran Patel", age: 29, designation: "QA Engineer", salary: 52000, department: "Testing" },
+    { id: 7, name: "Arjun Nair", age: 31, designation: "Business Analyst", salary: 59000, department: "Business" },
+    { id: 8, name: "Neha Bhat", age: 27, designation: "Content Writer", salary: 48000, department: "Marketing" },
+    { id: 9, name: "Rohan Malhotra", age: 33, designation: "Team Lead", salary: 70000, department: "Development" },
+    { id: 10, name: "Divya Reddy", age: 25, designation: "Intern", salary: 20000, department: "Support" }
+];
+
+
+var car = [
+            { "name": "Toyota", "model": "Camry", "price": 28000, "color": "White", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Honda", "model": "Civic", "price": 26000, "color": "Black", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Ford", "model": "Mustang", "price": 55000, "color": "Red", "year": 2021, "fuel_type": "Petrol" },
+            { "name": "Tesla", "model": "Model 3", "price": 39000, "color": "Blue", "year": 2024, "fuel_type": "Electric" },
+            { "name": "BMW", "model": "X5", "price": 62000, "color": "Silver", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Audi", "model": "A4", "price": 45000, "color": "Grey", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Mercedes", "model": "C-Class", "price": 50000, "color": "Black", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Hyundai", "model": "Elantra", "price": 23000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Kia", "model": "Sportage", "price": 29000, "color": "Green", "year": 2023, "fuel_type": "Hybrid" },
+            { "name": "Nissan", "model": "Altima", "price": 27000, "color": "Blue", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Chevrolet", "model": "Malibu", "price": 25000, "color": "Red", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Jeep", "model": "Wrangler", "price": 45000, "color": "Yellow", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Subaru", "model": "Forester", "price": 32000, "color": "Grey", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Mazda", "model": "CX-5", "price": 31000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Volkswagen", "model": "Passat", "price": 30000, "color": "Silver", "year": 2022, "fuel_type": "Diesel" },
+            { "name": "Lexus", "model": "RX 350", "price": 52000, "color": "Black", "year": 2023, "fuel_type": "Hybrid" },
+            { "name": "Volvo", "model": "XC60", "price": 53000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Jaguar", "model": "F-Pace", "price": 61000, "color": "Blue", "year": 2022, "fuel_type": "Diesel" },
+            { "name": "Porsche", "model": "Cayenne", "price": 80000, "color": "Grey", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Ferrari", "model": "Roma", "price": 222000, "color": "Red", "year": 2024, "fuel_type": "Petrol" },
+        ];
+
+
+  function loadCard(data){
+            var key=Object.keys(data[0]);
+        // document.write(key)
+            document.write("<div class='row m-5'>")
+            for (let a = 0; a < data.length; a++) {
+            document.write(`
+            <div class="col-md-4">
+                    <div class="card m-3">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+            `);
+                        for (let b = 0; b <key.length; b++) {
+                            document.write(`<p> ${key[b]}: ${data[a][key[b]]}</p>`);
+                        }
+            
+            document.write(`
+                        </div> 
+                        <div class="card-footer">Footer</div>
+                    </div>
+                </div>
+            `);
+            
+            }
+            document.write("</div>")
+        }
+        loadCard(employees);
+         loadCard(students);
+         loadCard(car);
+        
+    </script>
+</body>
+</html>
