@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var data = [
+            { "name": "Toyota", "model": "Camry", "price": 28000, "color": "White", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Honda", "model": "Civic", "price": 26000, "color": "Black", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Ford", "model": "Mustang", "price": 55000, "color": "Red", "year": 2021, "fuel_type": "Petrol" },
+            { "name": "Tesla", "model": "Model 3", "price": 39000, "color": "Blue", "year": 2024, "fuel_type": "Electric" },
+            { "name": "BMW", "model": "X5", "price": 62000, "color": "Silver", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Audi", "model": "A4", "price": 45000, "color": "Grey", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Mercedes", "model": "C-Class", "price": 50000, "color": "Black", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Hyundai", "model": "Elantra", "price": 23000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Kia", "model": "Sportage", "price": 29000, "color": "Green", "year": 2023, "fuel_type": "Hybrid" },
+            { "name": "Nissan", "model": "Altima", "price": 27000, "color": "Blue", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Chevrolet", "model": "Malibu", "price": 25000, "color": "Red", "year": 2022, "fuel_type": "Petrol" },
+            { "name": "Jeep", "model": "Wrangler", "price": 45000, "color": "Yellow", "year": 2023, "fuel_type": "Diesel" },
+            { "name": "Subaru", "model": "Forester", "price": 32000, "color": "Grey", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Mazda", "model": "CX-5", "price": 31000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Volkswagen", "model": "Passat", "price": 30000, "color": "Silver", "year": 2022, "fuel_type": "Diesel" },
+            { "name": "Lexus", "model": "RX 350", "price": 52000, "color": "Black", "year": 2023, "fuel_type": "Hybrid" },
+            { "name": "Volvo", "model": "XC60", "price": 53000, "color": "White", "year": 2024, "fuel_type": "Petrol" },
+            { "name": "Jaguar", "model": "F-Pace", "price": 61000, "color": "Blue", "year": 2022, "fuel_type": "Diesel" },
+            { "name": "Porsche", "model": "Cayenne", "price": 80000, "color": "Grey", "year": 2023, "fuel_type": "Petrol" },
+            { "name": "Ferrari", "model": "Roma", "price": 222000, "color": "Red", "year": 2024, "fuel_type": "Petrol" },
+        ];
+        var CarName = prompt("Enter Car Name");
+        var found = false;
+
+        for (var a = 0; a < data.length; a++) {
+            if (data[a].name === CarName) {
+                document.write(data[a].name + "<br>");
+                document.write(data[a].model + "<br>");
+                document.write(data[a].price + "<br>");
+                document.write(data[a].color + "<br>");
+                document.write(data[a].year + "<br>");
+                document.write(data[a].fuel_type + "<br>");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            document.write("Invalid No");
+        }
+    </script>
+</body>
+</html>
