@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>.....LowerCase().....</h2>
+    <h2>.....UpperCase().....</h2>
+    
+    <pre>
+        DOM (Document Object Model)
+        ----------------------------------------
+        Program No.001
+        ==============
+        Call by Use Id 
+        var name = "SUBHASH D WARKAD";
+        var a = name.toLowerCase();
+        var x = document.getElementById('obj');
+        x.innerText = a;
+        -----------------------------------------
+        JavaScript Function	                Purpose
+        .toLowerCase()	            Converts string to all lowercase letters
+        document.getElementById()	Selects an HTML element by ID
+        element.innerText	        Sets or gets the text inside an HTML element
+        ----------------------------------------------------------------------------
+         Program No. 002
+         ================
+          var Name = "subhash d. warkad";
+          var y = Name.toUpperCase();
+          var n = document.getElementsByClassName('cls')[0];
+          n.innerText = y;
+          --------------------------------------------------
+            Code	                                    Meaning
+        .toUpperCase()	                    Converts string to uppercase letters
+        getElementsByClassName('cls')[0]	Selects the first HTML element with class cls
+        .innerText = y	                    Sets the text content of that element to the value of y
+        -----------------------------------------------------------------------------------------------
+    </pre>
+    <h3 id="obj"></h3>
+    <h3 class="cls"></h3>
+    <script>
+        // program No.001
+        // Call by Use Id
+        var name = "SUBHASH D. WARKAD";
+        var a = name.toLowerCase();
+        var x = document.getElementById('obj');
+        x.innerText = a;
+        //----------------------------------------------------------------------------------------------
+        // Program No. 002
+          var Name = "subhash d. warkad";
+          var y = Name.toUpperCase();
+          var n = document.getElementsByClassName('cls')[0];
+          n.innerText = y;
+          
+          //---------------------------
+
+    </script>
+</body>
+
+</html>
