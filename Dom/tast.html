@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- New Program -->
+    <div>
+        <label for="" id="p">password</label>
+        <input type="text" id="pass" placeholder="password">
+        <button onclick="add()">sumit</button>
+    </div>
+
+
+    <div>
+        <h1 id="heding"></h1>
+        <label for=""> first no</label>
+        <input type="number" placeholder="enter first no" id="x">
+        <input type="number" placeholder="enter second no" id="y">
+        <button onclick="additon1()">sumit</button>
+    </div>
+
+
+    <!-- New Program -->
+     <!-- give input take a value from input and give this value next any tag -->.
+
+    <div>
+        <table width="100%">
+            <tr>
+                <td><input type="text" id="a" placeholder="Name"></td>
+                <td>
+                    <p>Customer Name: <span id="aa"></span> </p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="b" placeholder="Age"></td>
+                <td>
+                    <p>Customer Age: <span id="bb"></span> </p> 
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="c" placeholder="Email"></td>
+                <td>
+                    <p>Customer Email: <span id="cc"></span> </p> 
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="d" placeholder="Address"></td>
+                <td>
+                    <p>Customer Address: <span id="dd"></span> </p> 
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="inp()">Submit</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // document.getElementById('pass').value="type password";
+
+
+        //New Program
+        var allin=document.getElementsByTagName('input');
+        var ss=document.getElementsByTagName('div');
+
+        function add() {
+            console.log(ss)
+            console.log(allin)
+            document.getElementById('p').innerText = allin[0].value;
+
+        };
+
+        function additon1() {
+           
+            document.getElementById('heding').innerText =  parseInt(allin[1].value) + parseInt(allin[2].value);
+        };
+
+        // New Program
+        function inp(){
+            document.getElementById('aa').innerText =  allin[3].value;
+            document.getElementById('bb').innerText = allin[4].value;
+            document.getElementById('cc').innerText =  allin[5].value;
+            document.getElementById('dd').innerText =  allin[6].value;
+        };
+        
+
+    </script>
+</body>
+
+</html>
