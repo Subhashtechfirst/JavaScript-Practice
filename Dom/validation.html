@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="f1">
+        <label for="">Enter Number</label>
+        <input type="text" placeholder="Enter Number" id="int1">
+        <button onclick="valdte()">Validate</button>
+    </div>
+    <div id="f2">
+        <span id="arr1"></span>
+        <span id="arr2"></span>
+        <span id="pst"></span>
+    </div>
+    <script>
+        function valdte(){
+            var x = document.getElementById('int1').value;
+            if (x==''){
+                
+                document.getElementById('arr1').innerText='this fild should not be empty';
+                
+                document.getElementById('arr2').innerText='';
+            }
+            else if (x.length!=10){
+                document.getElementById('arr2').innerText='your number to short';
+                document.getElementById('arr1').innerText='';
+                
+            }
+            else{
+                document.getElementById('arr1').innerText='';
+                document.getElementById('arr2').innerText='';
+                document.getElementById('pst').innerText='yes this number is valid';
+                
+            }
+            // document.getElementById('f1').style.display = "none";
+        }
+
+        
+    </script>
+</body>
+</html>
