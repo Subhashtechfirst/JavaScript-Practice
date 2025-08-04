@@ -21,18 +21,23 @@
     <script>
         function valdte() {
             var x = document.getElementById('int1').value;
+            var xx=document.getElementById('arr1');
+            var nn=document.getElementById('arr2');
+
             if (x == '') {
 
-                document.getElementById('arr1').innerText = 'this fild should not be empty';
-                document.getElementById('arr2').innerText = '';
+                xx.innerText = 'this fild should not be empty';
+                xx.style.backgroundColor='red'
+
+               nn.innerText = '';
             }
             else if (x.length != 10) {
-                document.getElementById('arr2').innerText = 'your number to short';
-                document.getElementById('arr1').innerText = '';
+               nn.innerText = 'your number to short';
+                xx.innerText = '';
             }
             else {
-                document.getElementById('arr1').innerText = '';
-                document.getElementById('arr2').innerText = '';
+                xx.innerText = '';
+               nn.innerText = '';
                 document.getElementById('pst').innerText = 'yes this number is valid';
 
             }

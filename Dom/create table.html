@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        const employees = [
+             { id: 1, brand: "Toyota", model: "Camry", year: 2020, color: "White", fuel: "Petrol", price: 24000 },
+  { id: 2, brand: "Honda", model: "Civic", year: 2019, color: "Black", fuel: "Diesel", price: 22000 },
+  { id: 3, brand: "Hyundai", model: "Creta", year: 2021, color: "Red", fuel: "Petrol", price: 18000 },
+  { id: 4, brand: "Ford", model: "EcoSport", year: 2022, color: "Blue", fuel: "Petrol", price: 20000 },
+  { id: 5, brand: "Tata", model: "Nexon", year: 2023, color: "Silver", fuel: "Electric", price: 21000 },
+  { id: 6, brand: "Mahindra", model: "XUV500", year: 2021, color: "White", fuel: "Diesel", price: 25000 },
+  { id: 7, brand: "Maruti", model: "Swift", year: 2018, color: "Grey", fuel: "Petrol", price: 9000 },
+  { id: 8, brand: "Kia", model: "Seltos", year: 2022, color: "Orange", fuel: "Petrol", price: 19000 },
+  { id: 9, brand: "Volkswagen", model: "Polo", year: 2020, color: "Black", fuel: "Diesel", price: 17000 },
+  { id: 10, brand: "Renault", model: "Kwid", year: 2021, color: "Green", fuel: "Petrol", price: 8000 },
+  { id: 11, brand: "Skoda", model: "Rapid", year: 2019, color: "Maroon", fuel: "Diesel", price: 16000 },
+  { id: 12, brand: "Nissan", model: "Magnite", year: 2023, color: "White", fuel: "Petrol", price: 14000 },
+  { id: 13, brand: "Toyota", model: "Innova", year: 2022, color: "Silver", fuel: "Diesel", price: 28000 },
+  { id: 14, brand: "Honda", model: "City", year: 2021, color: "Grey", fuel: "Petrol", price: 21000 },
+  { id: 15, brand: "Hyundai", model: "i20", year: 2020, color: "Blue", fuel: "Petrol", price: 15000 },
+  { id: 16, brand: "Tata", model: "Tiago", year: 2022, color: "Red", fuel: "CNG", price: 10000 },
+  { id: 17, brand: "Ford", model: "Figo", year: 2019, color: "Black", fuel: "Diesel", price: 11000 },
+  { id: 18, brand: "Mahindra", model: "Thar", year: 2023, color: "Dark Green", fuel: "Diesel", price: 29000 },
+  { id: 19, brand: "Kia", model: "Carens", year: 2022, color: "White", fuel: "Petrol", price: 23000 },
+  { id: 20, brand: "Maruti", model: "Brezza", year: 2021, color: "Orange", fuel: "Petrol", price: 20000 },
+  { id: 21, brand: "Volkswagen", model: "Vento", year: 2020, color: "Silver", fuel: "Diesel", price: 19000 },
+  { id: 22, brand: "Skoda", model: "Kushaq", year: 2022, color: "Grey", fuel: "Petrol", price: 26000 },
+  { id: 23, brand: "Nissan", model: "Kicks", year: 2021, color: "Black", fuel: "Diesel", price: 18000 },
+  { id: 24, brand: "Renault", model: "Triber", year: 2023, color: "Blue", fuel: "Petrol", price: 12000 },
+  { id: 25, brand: "MG", model: "Hector", year: 2022, color: "Red", fuel: "Petrol", price: 27000 },
+  { id: 26, brand: "Toyota", model: "Fortuner", year: 2023, color: "Black", fuel: "Diesel", price: 35000 },
+  { id: 27, brand: "Hyundai", model: "Venue", year: 2020, color: "White", fuel: "Petrol", price: 18000 },
+  { id: 28, brand: "Tata", model: "Harrier", year: 2021, color: "Brown", fuel: "Diesel", price: 28000 },
+  { id: 29, brand: "Mahindra", model: "Bolero", year: 2022, color: "Grey", fuel: "Diesel", price: 22000 },
+ 
+
+
+
+//          { id: 1, name: "Amit Sharma", role: "HR Manager", email: "amit.sharma@example.com", image: "https://i.pravatar.cc/150?img=1" },
+//   { id: 2, name: "Sneha Patil", role: "Marketing Executive", email: "sneha.patil@example.com", image: "https://i.pravatar.cc/150?img=2" },
+//   { id: 3, name: "Ravi Kumar", role: "Finance Analyst", email: "ravi.kumar@example.com", image: "https://i.pravatar.cc/150?img=3" },
+//   { id: 4, name: "Neha Joshi", role: "Sales Lead", email: "neha.joshi@example.com", image: "https://i.pravatar.cc/150?img=4" },
+//   { id: 5, name: "Vikram Singh", role: "IT Head", email: "vikram.singh@example.com", image: "https://i.pravatar.cc/150?img=5" },
+//   { id: 6, name: "Pooja Rane", role: "Support Agent", email: "pooja.rane@example.com", image: "https://i.pravatar.cc/150?img=6" },
+//   { id: 7, name: "Rahul Deshmukh", role: "Admin Officer", email: "rahul.deshmukh@example.com", image: "https://i.pravatar.cc/150?img=7" },
+//   { id: 8, name: "Anjali Mehta", role: "Marketing Executive", email: "anjali.mehta@example.com", image: "https://i.pravatar.cc/150?img=8" },
+//   { id: 9, name: "Karan Jain", role: "Finance Manager", email: "karan.jain@example.com", image: "https://i.pravatar.cc/150?img=9" },
+//   { id: 10, name: "Priya Kulkarni", role: "HR Executive", email: "priya.kulkarni@example.com", image: "https://i.pravatar.cc/150?img=10" },
+//   { id: 11, name: "Suresh Nair", role: "IT Manager", email: "suresh.nair@example.com", image: "https://i.pravatar.cc/150?img=11" },
+//   { id: 12, name: "Komal Sawant", role: "Sales Associate", email: "komal.sawant@example.com", image: "https://i.pravatar.cc/150?img=12" },
+//   { id: 13, name: "Deepak Yadav", role: "Support Specialist", email: "deepak.yadav@example.com", image: "https://i.pravatar.cc/150?img=13" },
+//   { id: 14, name: "Meena Gupta", role: "Admin Manager", email: "meena.gupta@example.com", image: "https://i.pravatar.cc/150?img=14" },
+//   { id: 15, name: "Tarun Verma", role: "Finance Analyst", email: "tarun.verma@example.com", image: "https://i.pravatar.cc/150?img=15" },
+//   { id: 16, name: "Kavita Bhosale", role: "Marketing Manager", email: "kavita.bhosale@example.com", image: "https://i.pravatar.cc/150?img=16" },
+//   { id: 17, name: "Santosh Pawar", role: "HR Officer", email: "santosh.pawar@example.com", image: "https://i.pravatar.cc/150?img=17" },
+//   { id: 18, name: "Nikita More", role: "IT Engineer", email: "nikita.more@example.com", image: "https://i.pravatar.cc/150?img=18" },
+//   { id: 19, name: "Ajay Salunkhe", role: "Sales Manager", email: "ajay.salunkhe@example.com", image: "https://i.pravatar.cc/150?img=19" },
+//   { id: 20, name: "Rekha Dixit", role: "Support Executive", email: "rekha.dixit@example.com", image: "https://i.pravatar.cc/150?img=20" },
+//   { id: 21, name: "Manoj Kulkarni", role: "Legal Advisor", email: "manoj.kulkarni@example.com", image: "https://i.pravatar.cc/150?img=21" },
+//   { id: 22, name: "Divya Nair", role: "Business Analyst", email: "divya.nair@example.com", image: "https://i.pravatar.cc/150?img=22" },
+//   { id: 23, name: "Girish Jadhav", role: "Procurement Officer", email: "girish.jadhav@example.com", image: "https://i.pravatar.cc/150?img=23" },
+//   { id: 24, name: "Sunita Patil", role: "Logistics Head", email: "sunita.patil@example.com", image: "https://i.pravatar.cc/150?img=24" },
+//   { id: 25, name: "Harish More", role: "Web Developer", email: "harish.more@example.com", image: "https://i.pravatar.cc/150?img=25" },
+//   { id: 26, name: "Smita Wagh", role: "UX Designer", email: "smita.wagh@example.com", image: "https://i.pravatar.cc/150?img=26" },
+//   { id: 27, name: "Omkar Shinde", role: "Full Stack Dev", email: "omkar.shinde@example.com", image: "https://i.pravatar.cc/150?img=27" },
+//   { id: 28, name: "Radha Gaikwad", role: "Content Manager", email: "radha.gaikwad@example.com", image: "https://i.pravatar.cc/150?img=28" },
+//   { id: 29, name: "Yogesh Pawar", role: "Backend Dev", email: "yogesh.pawar@example.com", image: "https://i.pravatar.cc/150?img=29" },
+ 
+//               { rollNo: 1, name: "Aarav Patil", age: 14, class: "8th", marks: 87, email: "aarav.patil@example.com" },
+//   { rollNo: 2, name: "Sneha Joshi", age: 13, class: "7th", marks: 92, email: "sneha.joshi@example.com" },
+//   { rollNo: 3, name: "Rahul Sharma", age: 15, class: "9th", marks: 78, email: "rahul.sharma@example.com" },
+//   { rollNo: 4, name: "Pooja Rane", age: 14, class: "8th", marks: 85, email: "pooja.rane@example.com" },
+//   { rollNo: 5, name: "Karan Mehta", age: 16, class: "10th", marks: 74, email: "karan.mehta@example.com" },
+//   { rollNo: 6, name: "Meena Desai", age: 13, class: "7th", marks: 89, email: "meena.desai@example.com" },
+//   { rollNo: 7, name: "Suresh Yadav", age: 15, class: "9th", marks: 91, email: "suresh.yadav@example.com" },
+//   { rollNo: 8, name: "Anjali Bhosale", age: 14, class: "8th", marks: 95, email: "anjali.bhosale@example.com" },
+//   { rollNo: 9, name: "Tarun Verma", age: 13, class: "7th", marks: 81, email: "tarun.verma@example.com" },
+//   { rollNo: 10, name: "Nikita More", age: 16, class: "10th", marks: 88, email: "nikita.more@example.com" }
+
+
+
+            // { id: 1, name: "Amit Sharma", age: 28, department: "HR", email: "amit.sharma@example.com", salary: 35000 },
+            // { id: 2, name: "Sneha Patil", age: 26, department: "Marketing", email: "sneha.patil@example.com", salary: 40000 },
+            // { id: 3, name: "Ravi Kumar", age: 32, department: "Finance", email: "ravi.kumar@example.com", salary: 48000 },
+            // { id: 4, name: "Neha Joshi", age: 30, department: "Sales", email: "neha.joshi@example.com", salary: 42000 },
+            // { id: 5, name: "Vikram Singh", age: 35, department: "IT", email: "vikram.singh@example.com", salary: 55000 },
+            // { id: 6, name: "Pooja Rane", age: 29, department: "Support", email: "pooja.rane@example.com", salary: 30000 },
+            // { id: 7, name: "Rahul Deshmukh", age: 27, department: "Admin", email: "rahul.deshmukh@example.com", salary: 32000 },
+            // { id: 8, name: "Anjali Mehta", age: 31, department: "Marketing", email: "anjali.mehta@example.com", salary: 41000 },
+            // { id: 9, name: "Karan Jain", age: 33, department: "Finance", email: "karan.jain@example.com", salary: 47000 },
+            // { id: 10, name: "Priya Kulkarni", age: 25, department: "HR", email: "priya.kulkarni@example.com", salary: 34000 },
+            // { id: 11, name: "Suresh Nair", age: 36, department: "IT", email: "suresh.nair@example.com", salary: 58000 },
+            // { id: 12, name: "Komal Sawant", age: 28, department: "Sales", email: "komal.sawant@example.com", salary: 39000 },
+            // { id: 13, name: "Deepak Yadav", age: 29, department: "Support", email: "deepak.yadav@example.com", salary: 31000 },
+            // { id: 14, name: "Meena Gupta", age: 34, department: "Admin", email: "meena.gupta@example.com", salary: 33000 },
+            // { id: 15, name: "Tarun Verma", age: 30, department: "Finance", email: "tarun.verma@example.com", salary: 46000 },
+            // { id: 16, name: "Kavita Bhosale", age: 27, department: "Marketing", email: "kavita.bhosale@example.com", salary: 39000 },
+            // { id: 17, name: "Santosh Pawar", age: 35, department: "HR", email: "santosh.pawar@example.com", salary: 36000 },
+            // { id: 18, name: "Nikita More", age: 26, department: "IT", email: "nikita.more@example.com", salary: 53000 },
+            // { id: 19, name: "Ajay Salunkhe", age: 32, department: "Sales", email: "ajay.salunkhe@example.com", salary: 45000 },
+            // { id: 20, name: "Rekha Dixit", age: 31, department: "Support", email: "rekha.dixit@example.com", salary: 32000 }
+        ];
+
+
+
+
+        var key=Object.keys(employees[0]);
+        console.log(key);
+
+        var tr=document.createElement('tr');
+        var thead=document.getElementsByTagName('thead')[0];
+        var table=document.getElementsByTagName('table')[0];
+        table.style.width='100%';
+        table.border='1px solid gray'
+        key.forEach((h)=>{
+            var td=document.createElement('th');
+              
+            td.innerText=h;
+            td.style.textTransform="uppercase"
+            tr.appendChild(td);
+            thead.appendChild(tr);
+        })
+
+
+
+       
+        var tbody=document.getElementsByTagName('tbody')[0];
+        employees.forEach((e)=>{
+        var trr=document.createElement('tr');
+            key.forEach((ee)=>{
+                
+                var td=document.createElement('td');
+                td.innerText=e[ee];
+                trr.appendChild(td);
+                tbody.appendChild(trr);
+            })
+
+        })
+
+        
+    </script>
+</body>
+</html>

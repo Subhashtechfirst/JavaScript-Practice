@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul></ul>
+
+    <script>
+
+        const employees = [
+            { id: 1, name: "Amit Sharma", age: 28, department: "HR", email: "amit.sharma@example.com", salary: 35000 },
+            { id: 2, name: "Sneha Patil", age: 26, department: "Marketing", email: "sneha.patil@example.com", salary: 40000 },
+            { id: 3, name: "Ravi Kumar", age: 32, department: "Finance", email: "ravi.kumar@example.com", salary: 48000 },
+            { id: 4, name: "Neha Joshi", age: 30, department: "Sales", email: "neha.joshi@example.com", salary: 42000 },
+            { id: 5, name: "Vikram Singh", age: 35, department: "IT", email: "vikram.singh@example.com", salary: 55000 },
+            { id: 6, name: "Pooja Rane", age: 29, department: "Support", email: "pooja.rane@example.com", salary: 30000 },
+            { id: 7, name: "Rahul Deshmukh", age: 27, department: "Admin", email: "rahul.deshmukh@example.com", salary: 32000 },
+            { id: 8, name: "Anjali Mehta", age: 31, department: "Marketing", email: "anjali.mehta@example.com", salary: 41000 },
+            { id: 9, name: "Karan Jain", age: 33, department: "Finance", email: "karan.jain@example.com", salary: 47000 },
+            { id: 10, name: "Priya Kulkarni", age: 25, department: "HR", email: "priya.kulkarni@example.com", salary: 34000 },
+            { id: 11, name: "Suresh Nair", age: 36, department: "IT", email: "suresh.nair@example.com", salary: 58000 },
+            { id: 12, name: "Komal Sawant", age: 28, department: "Sales", email: "komal.sawant@example.com", salary: 39000 },
+            { id: 13, name: "Deepak Yadav", age: 29, department: "Support", email: "deepak.yadav@example.com", salary: 31000 },
+            { id: 14, name: "Meena Gupta", age: 34, department: "Admin", email: "meena.gupta@example.com", salary: 33000 },
+            { id: 15, name: "Tarun Verma", age: 30, department: "Finance", email: "tarun.verma@example.com", salary: 46000 },
+            { id: 16, name: "Kavita Bhosale", age: 27, department: "Marketing", email: "kavita.bhosale@example.com", salary: 39000 },
+            { id: 17, name: "Santosh Pawar", age: 35, department: "HR", email: "santosh.pawar@example.com", salary: 36000 },
+            { id: 18, name: "Nikita More", age: 26, department: "IT", email: "nikita.more@example.com", salary: 53000 },
+            { id: 19, name: "Ajay Salunkhe", age: 32, department: "Sales", email: "ajay.salunkhe@example.com", salary: 45000 },
+            { id: 20, name: "Rekha Dixit", age: 31, department: "Support", email: "rekha.dixit@example.com", salary: 32000 }
+        ];
+
+
+        var body = document.getElementsByTagName('body')[0];
+        // print to how mach element
+        employees.length = 10;
+        // visit every one
+        employees.forEach((e) => {
+            var li = document.createElement('li');
+            var ol = document.createElement('ol');
+
+            // Concatenation in JavaScript
+            //li.innerText="Name: "+e.name +'  Deparment:'+ e.department+'  email: '+e.email+' Age : '+e.age+' salary : '+e.salary;
+
+            // Template Literals // String Literals
+            li.innerText = `Name : ${e.name} Age: ${e.age} Depertment: ${e.department} email: ${e.email} salary: ${e.salary}`;
+
+            li.appendChild(ol);
+            li.style.listStyleType = 'number'
+            li.style.padding = "5px";
+            li.style.margin = "5px";
+            li.style.border = "2px solid gray";
+            li.style.boxShadow = " 2px 3px 5px black";
+            li.style.color = "white";
+            body.style.backgroundColor = "blue";
+
+            var ul = document.getElementsByTagName('ul')[0];
+
+            ul.appendChild(li);
+        })
+    </script>
+
+</body>
+
+</html>
