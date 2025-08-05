@@ -13,12 +13,15 @@
                 // Give A Input
             var tagName=prompt("Enter the tag name you want to create:");
             var textToDisplay = prompt("Enter the text you want to display:");
+
                 // Create A Tag
             var createTag = document.createElement(tagName);
                 // Given Text To Display
             createTag.innerText=textToDisplay;
+            
                 // Find The First Div [0] Index
             var findTag = document.getElementsByTagName('div')[0];
+
                 // This appends the <h1> element (stored in variable 'a') inside the <div> element (stored in variable 'd').
             findTag.appendChild(createTag);
 

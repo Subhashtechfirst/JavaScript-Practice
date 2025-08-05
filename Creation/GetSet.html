@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sss()">send</button>
+
+    <h1></h1>
+    <button onclick="ggg()">get</button>
+    <script>
+
+        var name1 = "subhash";
+        function sss(){
+           localStorage.setItem('STOR', name1);
+
+        }
+
+        function ggg(){
+            var s=localStorage.getItem("STOR");
+            document.getElementsByTagName("h1")[0].innerText=s;
+        }
+
+    </script>
+
+   
+</body>
+</html>

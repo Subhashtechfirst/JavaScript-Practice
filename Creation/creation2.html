@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div></div>
+    <button onclick="newProgram()">Create New Tag</button>
+    <Script>
+        function newProgram() {
+            var tagName = prompt("enter any tag");
+            var textToDisplay = prompt("Enter Any Text");
+            var createTag = document.createElement(tagName);
+            createTag.innerText = textToDisplay;
+            var findTag = document.getElementsByTagName('div')[0];
+            findTag.appendChild(createTag);
+
+        }
+
+
+    </Script>
+
 </body>
+
 </html>
