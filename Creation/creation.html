@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div></div>
     <button onclick="abc()"> Click</button>
     <script>
-        function abc(){
+        function abc() {
             // give a input
-            var tg=prompt("Enter Tag name");
-            var ttx=prompt("Enter text for the tag");
+            var tg = prompt("Enter Tag name");
+            var ttx = prompt("Enter text for the tag");
             // creat a tag
             var a = document.createElement(tg);
-            // give a atext
-            a.innerText=ttx;
+            // give a text
+            a.innerText = ttx;
             //  This finds the first <div>
-            var d=document.getElementsByTagName('div')[0];
-            //  This appends the <h1> element (stored in a) inside the <div> (stored in d). conection
-           d.appendChild(a);
-
+            var d = document.getElementsByTagName('div')[0];
+            // This appends the <h1> element (stored in variable 'a') inside the <div> element (stored in variable 'd').
+            d.appendChild(a);
         }
     </script>
 </body>
+
 </html>
