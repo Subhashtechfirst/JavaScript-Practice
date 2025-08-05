@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="newparagraph"></p>
+<button onclick="addElement()">Add Element</button>
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+function addElement() {
+    var newParagraphg = document.createElement("p");
+    newParagraphg.innerText = "This is a new paragraph!";
+    document.getElementById("newparagraph").appendChild(newParagraphg);
+}
+function changeStyle(){
+    document.getElementById("newparagraph").style.color="blue";
+
+}
+</script> -->
+
+
+<div id="newparagraph"></div>
+
+<button onclick="addElement()">Add Element</button>
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+function addElement() {
+    var newPara = document.createElement("p");
+    newPara.innerText = "This is a new paragraph!";
+    document.getElementById("newparagraph").appendChild(newPara);
+}
+
+function changeStyle(){
+    // newparagraph div मधल्या सर्व p एलिमेंट्स मिळवा
+    var allParagraphs = document.getElementById("newparagraph").getElementsByTagName("p");
+
+    // सर्व पॅराग्राफ्सवर loop टाका आणि style change करा
+    for (var i = 0; i < allParagraphs.length; i++) {
+        allParagraphs[i].style.color = "blue";
+        allParagraphs[i].style.fontWeight = "bold";
+    }
+}
+</script>
+</body>
+</html>
