@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <button onclick="sendData()"> click</button>
+    <h1></h1>
+    
+    <button onclick="getData()">recive</button>
+
+    <script>
+        let people = [
+            { id: 1, name: "Amit", age: 25 },
+            { id: 2, name: "Sneha", age: 28 },
+            { id: 3, name: "Rahul", age: 22 },
+            { id: 4, name: "Priya", age: 30 },
+            { id: 5, name: "Vikas", age: 27 },
+            { id: 6, name: "Neha", age: 24 },
+            { id: 7, name: "Rohan", age: 26 },
+            { id: 8, name: "Pooja", age: 23 },
+            { id: 9, name: "Anil", age: 29 },
+            { id: 10, name: "Kiran", age: 31 },
+            
+        ];
+
+        function sendData() {
+            localStorage.setItem('StorArray', JSON.stringify(people));
+        }
+        function getData() {
+            let name="";
+            var storData = JSON.parse(localStorage.getItem('StorArray'));
+            for (let i=0; i< storData.length; i++){
+                name += storData[i].name + "<br>" ;
+            }
+            document.getElementsByTagName('h1')[0].innerHTML =name;
+
+        }
+    </script>
+</body>
+</html>
