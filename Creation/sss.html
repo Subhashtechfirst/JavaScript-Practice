@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Result</title>
+</head>
+<body>
+
+  <h2>Enter Student Data</h2>
+
+  <label>Roll No:</label>
+  <input type="number" id="roll"><br><br>
+
+  <label>Name:</label>
+  <input type="text" id="name"><br><br>
+
+  <label>Division:</label>
+  <input type="text" id="division"><br><br>
+
+  <label>Subject:</label>
+  <input type="text" id="subject"><br><br>
+
+  <label>Marks:</label>
+  <input type="number" id="marks"><br><br>
+
+  <button onclick="saveData()">Save Student</button>
+  <button onclick="showData()">Show Data</button>
+
+  <h3>Student List</h3>
+  <div id="output"></div>
+
+  <script>
+    let students = [];
+
+    function saveData() {
+      // Read input values
+      let roll = document.getElementById("roll").value;
+      let name = document.getElementById("name").value;
+      let division = document.getElementById("division").value;
+      let subject = document.getElementById("subject").value;
+      let marks = parseInt(document.getElementById("marks").value);
+
+      // Decide result
+      let result = marks >= 35 ? "Pass" : "Fail";
+
+      // Create object
+      let student = {
+        rollNo: roll,
+        name: name,
+        division: division,
+        subject: subject,
+        marks: marks,
+        result: result
+      };
+
+      // Push into array
+      students.push(student);
+
+      // Save to localStorage
+      localStorage.setItem("studentData", JSON.stringify(students));
+
+      // Clear inputs
+      document.getElementById("roll").value = "";
+      document.getElementById("name").value = "";
+      document.getElementById("division").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("marks").value = "";
+
+      alert("Student Saved!");
+    }
+
+    function showData() {
+      let data = JSON.parse(localStorage.getItem("studentData"));
+      let output = "<table border='1' cellpadding='10'><tr><th>Roll No</th><th>Name</th><th>Division</th><th>Subject</th><th>Marks</th><th>Result</th></tr>";
+
+      if (data) {
+        data.forEach(function(student) {
+          output += `<tr>
+                      <td>${student.rollNo}</td>
+                      <td>${student.name}</td>
+                      <td>${student.division}</td>
+                      <td>${student.subject}</td>
+                      <td>${student.marks}</td>
+                      <td>${student.result}</td>
+                    </tr>`;
+        });
+      }
+
+      output += "</table>";
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>

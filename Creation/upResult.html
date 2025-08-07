@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marksheet</title>
+</head>
+
+<body>
+
+    <h2>Student Marksheet</h2>
+
+    <label>Roll No:</label>
+    <input type="number" id="roll"><br><br>
+
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Class:</label>
+    <input type="text" id="class"><br><br>
+
+    <label>Math:</label>
+    <input type="number" id="math"><br><br>
+
+    <label>Science:</label>
+    <input type="number" id="science"><br><br>
+
+    <label>English:</label>
+    <input type="number" id="english"><br><br>
+
+    <label>History:</label>
+    <input type="number" id="history"><br><br>
+
+    <label>Geography:</label>
+    <input type="number" id="geography"><br><br>
+
+    <button onclick="generateMarksheet()">Generate Marksheet</button>
+
+    <h3>Marksheet</h3>
+    <div id="output"></div>
+
+    <script>
+        function generateMarksheet() {
+            let roll = document.getElementById("roll").value;
+            let name = document.getElementById("name").value;
+            let studentClass = document.getElementById("class").value;
+            let math = parseInt(document.getElementById("math").value);
+            let science = parseInt(document.getElementById("science").value);
+            let english = parseInt(document.getElementById("english").value);
+            let history = parseInt(document.getElementById("history").value);
+            let geography = parseInt(document.getElementById("geography").value);
+
+            let total = math + science + english + history + geography;
+            let percentage = (total / 500) * 100;
+
+            let result = (math >= 35 && science >= 35 && english >= 35 && history >= 35 && geography >= 35) ? "Pass" : "Fail";
+
+            let grade = "";
+            if (percentage >= 90) grade = "A+";
+            else if (percentage >= 80) grade = "A";
+            else if (percentage >= 70) grade = "B+";
+            else if (percentage >= 60) grade = "B";
+            else if (percentage >= 50) grade = "C+";
+            else if (percentage >= 35) grade = "C";
+            else grade = "Fail";
+
+            let output = `
+        <table border='1' cellpadding='10'>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Math</th>
+                    <th>Science</th>
+                    <th>English</th>
+                    <th>History</th>
+                    <th>Geography</th>
+                    <th>Total Marks</th>
+                    <th>Percentage</th>
+                    <th>Result</th>
+                    <th>Grade</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${roll}</td>
+                    <td>${name}</td>
+                    <td>${studentClass}</td>
+                    <td>${math}</td>
+                    <td>${science}</td>
+                    <td>${english}</td>
+                    <td>${history}</td>
+                    <td>${geography}</td>
+                    <td>${total} / 500</td>
+                    <td>${percentage.toFixed(2)}%</td>
+                    <td>${result}</td>
+                    <td>${grade}</td> 
+                </tr>
+               
+            </tbody>
+        </table>
+      `;
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
