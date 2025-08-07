@@ -71,7 +71,8 @@
       else if (percentage >= 60) grade = "B";
       else if (percentage >= 50) grade = "C+";
       else if (percentage >= 35) grade = "C";
-      else grade = "Fail";
+      else if (percentage >=0 ) grade = "Fail";
+    //   else grade = "Fail";
 
       // Add this student to the array
       studentList.push({
