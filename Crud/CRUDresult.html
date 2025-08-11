@@ -8,6 +8,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Document</title>
+    <style>
+        li{
+            display: inline;
+            margin: 10px 30px;
+           
+        }
+        ul{
+            border: 1px solid gray;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,14 +30,17 @@
             <div class="mb-3 mt-3">
                 <label for="Roll No" class="form-label">Roll No:</label>
                 <input type="text" class="form-control" id="rollNo" placeholder="Enter Roll No">
+                <br><b class="err"></b>
             </div>
             <div class="mb-3 mt-3">
                 <label for="Name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                <br><b class="err"></b>
             </div>
             <div class="mb-3 mt-3">
                 <label for="Division" class="form-label"> Division</label>
                 <input type="text" class="form-control" id="division" placeholder="Enter Division">
+                <br><b class="err"></b>
             </div>
 
             <div class="mb-3 mt-3">
@@ -41,19 +55,152 @@
                     <option value="History">History</option>
                     <option value="Geography">Geography</option>
                 </select>
+                <br><b class="err"></b>
 
             </div>
             <div class="mb-3 mt-3">
                 <label for="marks" class="form-label">Marks:</label>
                 <input type="number" class="form-control" id="marks" placeholder="Enter Marks">
+                <br><b class="err"></b>
             </div>
             <button class="btn btn-sm btn-success w-100" id="ddd" onclick="add()">Add Data</button>
         </div>
-        <div class="col-md-8 P-5 border"></div>
+        <div class="col-md-8 P-5 border">
+            
+        </div>
     </section>
     </section>
     <script>
+        var dataStoreHere= JSON.parse( localStorage.getItem("StudentData"))||[];
+        var list= document.getElementsByClassName("col-md-8")[0];
+        var rolno=document.getElementById('rollNo');
+        var name1=document.getElementById('name');
+        var division=document.getElementById('division');
+        var subject=document.getElementById('subject');
+        var marks=document.getElementById('marks');
+        
+    show()
+
+       function show(){
+        
+         var s=dataStoreHere.map((i,index)=>{
+            return  `<ul onclick='del(${index})'>
+                <li> Roll No: ${i.ROLL}</li>
+                <li> Name:  ${i.NAME}</li>
+                <li> Division:  ${i.DIVISION}</li>
+                <li> Subject:  ${i.SUBJECT}</li>
+                <li> Mars: ${i.MARK} </li>
+            </ul>`
+         });
+    var ss=s.join('');
+
+         list.innerHTML=ss;
+       }
+
+
+
+
+function del(ind){
+    var con=confirm("Are You want to delete this");
+
+    if(con){
+        dataStoreHere.splice(ind,1);
+        localStorage.setItem("StudentData",JSON.stringify(dataStoreHere));
+    show();
+    }
+    
+}
+
+
+
+
+
+
         function add(){
+            var dummayObj={
+                ROLL:rolno.value,
+                NAME:name1.value,
+                DIVISION:division.value,
+                SUBJECT:subject.value,
+                MARK:marks.value,
+            }
+            var err0=document.getElementsByClassName("err")[0];
+            var err1=document.getElementsByClassName("err")[1];
+            var err2=document.getElementsByClassName("err")[2];
+            var err3=document.getElementsByClassName("err")[3];
+            var err4=document.getElementsByClassName("err")[4];
+            
+            if(
+                 rolno.value!=''&&
+                name1.value!=''&&
+                division.value!=''&&
+                subject.value!=''&&
+                marks.value!==''
+            ){
+                dataStoreHere.push(dummayObj);
+                show()
+                localStorage.setItem("StudentData",JSON.stringify(dataStoreHere));
+                 console.log(dataStoreHere);
+                rolno.value='';
+                name1.value='';
+                division.value='';
+                subject.value='';
+                marks.value='';
+                document.getElementsByClassName("err").array.forEach(el => {
+                    el.value='';
+                });
+
+                
+
+            }else{
+               
+                if(rolno.value==''){ 
+                    err0.innerText="Role number is empty, please fill this."  ;
+                    err0.style.color="red";
+                }
+                else{
+                    err0.innerText='';
+                }
+
+                 if(name1.value==''){ 
+                    err1.innerText="Name is empty, please fill this."  ;
+                    err1.style.color="red";
+                }
+                else{
+                    err1.innerText='';
+                }
+
+                if(division.value==''){ 
+                    err2.innerText="Division is empty, please fill this."  ;
+                    err2.style.color="red";
+                }
+                else{
+                    err2.innerText='';
+                }
+
+                if(subject.value==''){ 
+                    err3.innerText="Subject is empty, please fill this."  ;
+                    err3.style.color="red";
+                }
+                else{
+                    err3.innerText='';
+                }
+
+                if(marks.value==''){ 
+                    err4.innerText="Mark is empty, please fill this."  ;
+                    err4.style.color="red";
+                }
+                else{
+                    err4.innerText='';
+                }
+
+
+
+            }
+
+           
+
+           
 
         }
     </script>
