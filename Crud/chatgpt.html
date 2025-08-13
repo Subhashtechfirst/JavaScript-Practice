@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Add & Display</title>
+</head>
+<body>
+    <h2>Data Entry</h2>
+    <input type="text" id="userName" placeholder="User Name">
+    <input type="text" id="password" placeholder="Password">
+    <button onclick="add()">Add</button>
+
+    <h3>Stored Data:</h3>
+    <div id="output"></div>
+
+    <script>
+        let data = JSON.parse(localStorage.getItem("data")) || [];
+
+        function display() {
+            document.getElementById("output").innerHTML =
+                data.map(item => `${item.userName} - ${item.password}`).join("<br>");
+        }
+
+        function add() {
+            let user = document.getElementById("userName").value;
+            let pass = document.getElementById("password").value;
+
+            if(user && pass) {
+                data.push({ userName: user, password: pass });
+                localStorage.setItem("data", JSON.stringify(data));
+                display();
+                document.getElementById("userName").value = "" ;
+                document.getElementById("password").value = "";
+            }
+        }
+
+        display();
+    </script>
+</body>
+</html>
