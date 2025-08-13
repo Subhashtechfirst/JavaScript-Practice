@@ -17,8 +17,10 @@
 
         function display() {
             document.getElementById("output").innerHTML =
-                data.map(item => `${item.userName} - ${item.password}`).join("<br>");
-        }
+                data.map(item => `${item.userName} - ${item.password}`).join
+                ("<br>");
+
+            }
 
         function add() {
             let user = document.getElementById("userName").value;

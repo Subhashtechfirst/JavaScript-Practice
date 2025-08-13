@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+       <div></div>
+    <button> Click</button>
+    <button> remove</button>
+
+
+    <script>
+
+        var d=document.querySelector('div');
+
+        function adddd(){
+            d.innerText="add text for the div"
+        }
+
+        function remooo(){
+            d.innerText=''
+        }
+
+
+        var btn=document.querySelectorAll('button');
+
+        btn[0].addEventListener('click',adddd);
+
+        btn[1].addEventListener('click',remooo)
+    </script>
+    
+</body>
+</html>

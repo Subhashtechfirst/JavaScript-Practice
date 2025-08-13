@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div></div>
+    <button> Click</button>
+    <button> remove</button>
+
+    <script>
+        function aaa(){
+
+            document.querySelector('div').innerText="Sham"
+        }
+
+       setTimeout(aaa,5000)
+
+
+       /// document.querySelector('button').addEventListener('click',aaa)
+
+    //    var inc=0;
+    //    function bbb(){
+    //     inc++;
+    //     if(inc>10){
+    //         console.log(`Time Start ,${inc}`)
+    //     }else{
+    //     document.write(`Time Start ,${inc} <br>`)
+    //     }
+    //    }
+
+
+       //setTimeout(bbb,3000)
+
+
+       
+
+       //setInterval(bbb,1000);
+
+
+       //----------------------------------------------------
+
+        var inc2=0
+       function ccc(){
+        inc2++
+        document.write(`Time Start ,${inc2} <br>`);
+        if(inc2>=10){
+            clearInterval(s)
+            console.log(inc2)
+        }else{
+console.log(inc2)
+        }
+       }
+
+       var s=setInterval(ccc,2000)
+       
+
+
+    </script>
+    
+</body>
+</html>
