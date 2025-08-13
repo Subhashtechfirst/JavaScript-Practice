@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <body>
-    <section class="container py-4">
-    <section class="row" >
+        <section class="container py-4">
+            <section class="row">
 
-        <div class="col-md-4 p-5 border ">
-            <h1>Data Entry Form</h1>
-            <div class="mb-3 mt-3">
-                <label for="User Name" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="userName" placeholder="Enter User Name">
-                <br><b class="err"></b>
-            </div>
-            <div class="mb-3 mt-3">
-                <label for="Password" class="form-label">Password</label>
-                <input type="number" class="form-control" id="passWord" placeholder="Enter Password">
-                <br><b class="err"></b>
+                <div class="col-md-4 p-5 border ">
+                    <h1>Data Entry Form</h1>
+                    <div class="mb-3 mt-3">
+                        <label for="Email Id" class="form-label">Email Id:</label>
+                        <input type="text" class="form-control" id="emailId" placeholder="Enter Email Id">
+                        <br><b class="err"></b>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="number" class="form-control" id="pass" placeholder="Enter Password">
+                        <br><b class="err"></b>
 
-            <button class="btn btn-sm btn-success w-100" id="ddd" onclick="add()">Add Data</button>
-        </div>
-        <div class="col-md-8 P-5 border">
-            
-        </div>
-    </section>
-    </section>
-    <script>
+                        <button class="btn btn-sm btn-success w-100" id="ddd" onclick="add()">Add Data</button>
+                    </div>
+                    <div class="col-md-8 P-5 border" id="viewoutput">
 
-        var databaseStor = localStorage.getItem('data') || [];
-        DisplayData();
-        var user_name = document.getElementById('userName');
-        var Password = document.getElementById('passWord');
+                    </div>
+            </section>
+        </section>
 
-        function add(){
-            let obj = { 
-                'User Name ': useerName.value, 'Password': password.value
+        <script>
+
+            var databaseStor = localStorage.getItem('data') || [];
+            function DisplayData() {
+                
+
             }
-        }
-    </script>
-    
-</body>
+
+            function add() {
+                var user_name = document.getElementById('emailId').value;
+                var Password = document.getElementById('pass').value;
+            }
+
+        </script>
+
+    </body>
+
 </html>
