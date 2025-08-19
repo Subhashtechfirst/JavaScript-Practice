@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="a" onchange="changeitem(event.target.value)">
+        <option value="orange">Orange</option>
+        <option value="Mango">Mango</option>
+        <option value="Banana">Banana</option>
+        <option value="PaPaya">PaPaya</option>
+        <option value="Apple">Apple</option>
+        
+    </select>
+    <h1></h1>
+    <h2></h2>
+
+   
+
+    <input type="text" onkeypress="kyuuup()">
+ <input type="range" min="1" max="100" value="0" name="" onclick="clr()">
+
+    <script>
+        var aa=setInterval(ss,100);
+        var invl=0;
+        function ss(){
+            invl++;
+            // if(invl>100){
+            //     invl=0;
+            // }
+            document.getElementsByTagName('input')[1].value=invl;
+             document.getElementsByTagName('h1')[0].innerText=invl +"%";
+
+            if(invl>=100){ clearInterval(aa); alert("download compleat")}
+            
+
+            
+
+        }
+      function clr(){
+          var ins=document.getElementsByTagName('input')[1].value;
+        document.getElementsByTagName('h1')[0].innerText=ins;
+      }
+
+      function kyuuup(){
+        var ins=document.getElementsByTagName('input')[0].value;
+        document.getElementsByTagName('h1')[0].innerText=ins;
+      }
+
+
+        function changeitem(item){
+            document.getElementsByTagName('h2')[0].innerText=item;
+        }
+    </script>
+    
+</body>
+</html>

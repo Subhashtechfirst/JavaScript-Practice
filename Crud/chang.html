@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select name="" id="one" onchange="changeitem(event.target.value)"></select>
+
+
+    <select name="" id="tow"></select>
+
+    <select name="" id="three"></select>
+    <script>
+
+        let countries = [
+            { name: "Country" },
+            { name: "India" },
+            { name: "United States" },
+            { name: "China" },
+
+        ];
+
+        let india = [
+            { name: "State" },
+            { name: "MH" },
+            { name: "UP" },
+            { name: "MP" },
+
+        ];
+
+
+        let chann = [
+            { name: "State" },
+            { name: "qqqq" },
+            { name: "eeeee" },
+            { name: "rrrr" },
+
+        ];
+
+
+        let uk = [
+            { name: "State" },
+            { name: "paris" },
+            { name: "narve" },
+            { name: "mask" },
+
+        ];
+
+        var ssss = ''
+        function changeitem(item) {
+            // alert(item)
+
+            if (item == 'India') {
+                ssss = ''
+                var ww = document.getElementById('tow');
+                india.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+
+
+            if (item == 'China') {
+                ssss = ''
+                var ww = document.getElementById('tow');
+                chann.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+
+            if (item == 'United States') {
+                ssss = ''
+                var ww = document.getElementById('tow');
+                uk.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+        }
+
+
+
+
+// other program
+
+
+
+
+
+        var s = document.getElementById('one');
+
+        var aa = ''
+        function ss() {
+            countries.forEach((i) => {
+                aa += `<option>${i.name}</option>`
+            })
+            s.innerHTML = aa;
+        }
+        ss()
+    </script>
+</body>
+
+</html>
