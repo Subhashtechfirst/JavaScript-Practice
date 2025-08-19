@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,39 @@
         function fff(){
             clearTimeout(s)
         }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>addEventListener Example</title>
+</head>
+<body>
+    <h2>addEventListener Demo</h2>
+
+    <button id="clickBtn">Click Me</button>
+    <div id="myBox" style="width:100px;height:100px;border:1px solid black;margin-top:20px;">
+        Hover Me
+    </div>
+
+    <script>
+        // Click event
+        document.getElementById("clickBtn").addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+
+        // Hover effects
+        let box = document.getElementById("myBox");
+
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "yellow";
+        });
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "white";
+        });
     </script>
 </body>
 </html>
