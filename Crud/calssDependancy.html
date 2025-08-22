@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="classes" onchange="changeitem(event.target.value)"></select>
+    <select id="students"></select>
+
+    <script>
+        let Class = [
+            { name: "select Class" }, { name: "First Class" }, { name: "Second Class" }, { name: "Third Class" },
+            { name: "Forth Class" }, { name: "Fifth Class" },
+        ];
+
+        let FirstClassStudentName = [
+            { name: "Aarav" }, { name: "Vihaan" }, { name: "Aditya" }, { name: "Ishaan" }, { name: "Kabir" },
+        ];
+
+        let SecondClassStudentName = [
+            { name: "Advika" }, { name: "Anaya" }, { name: "Diya" }, { name: "Ira" }, { name: "Myra" },
+        ];
+        let ThirdClassStudentName = [
+            { name: "Aryan" }, { name: "Vivaan" }, { name: "Samar" }, { name: "Laksh" }, { name: "Om" },
+        ];
+
+        let FourthClassStudentName = [
+            { name: "Anvi" }, { name: "Prisha" }, { name: "Navya" }, { name: "Tara" }, { name: "Meera" },
+        ];
+
+        let FifthClassStudentName = [
+            { name: "Dev" }, { name: "Nikhil" }, { name: "Rajat" }, { name: "Sahil" }, { name: "Yash" },
+        ];
+
+
+        function changeclassess() {
+            var sdrop = document.getElementById('classes');
+            var options = '';
+            Class.forEach((i) => {
+                options += `<option>${i.name}</option>`;
+            });
+            sdrop.innerHTML = options;
+
+
+        };
+        function changeitem(item) {
+            let sdrop = document.getElementById('students');
+            let options = '';
+
+            if (item == "First Class") {
+                FirstClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Second Class") {
+                SecondClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Third Class") {
+                ThirdClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Fourth Class") {
+                FourthClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Fifth Class") {
+                FifthClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            sdrop.innerHTML = options;
+        }
+
+
+        changeclassess();
+
+    </script>
+</body>
+
+</html>

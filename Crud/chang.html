@@ -10,15 +10,17 @@
 <body>
 
     <select name="" id="one" onchange="changeitem(event.target.value)"></select>
+    <select name="" id="tow" onchange="sta(event.target.value)">
+        <option value="Select State">Select State</option>
+    </select>
 
-
-    <select name="" id="tow"></select>
-
-    <select name="" id="three"></select>
+    <select name="" id="three">
+        <option value="Select District">Select District</option>
+    </select>
     <script>
 
         let countries = [
-            { name: "Country" },
+            { name: "Select Country" },
             { name: "India" },
             { name: "United States" },
             { name: "China" },
@@ -26,72 +28,106 @@
         ];
 
         let india = [
-            { name: "State" },
-            { name: "MH" },
-            { name: "UP" },
-            { name: "MP" },
+            { name: "Select State" },
+            { name: "Andhra Pradesh" },
+            { name: "Madhya Pradesh" },
+            { name: "Maharashtra" },
 
         ];
 
+        let Maharashtra = [
+            { name: "Select District" },
+            { name: "Pune" },
+            { name: "Mumbai" },
+            { name: "Nagpur" },
+            { name: "Nashik" },
+            { name: "Aurangabad" }
+        ];
 
-        let chann = [
-            { name: "State" },
-            { name: "qqqq" },
-            { name: "eeeee" },
-            { name: "rrrr" },
-
+        let AndhraPradesh = [
+            { name: "Select District" },
+            { name: "Visakhapatnam" },
+            { name: "Vijayawada" },
+            { name: "Guntur" },
+            { name: "Nellore" },
+            { name: "Kurnool" }
         ];
 
 
-        let uk = [
-            { name: "State" },
-            { name: "paris" },
-            { name: "narve" },
-            { name: "mask" },
 
-        ];
+
 
         var ssss = ''
-        function changeitem(item) {
-            // alert(item)
+        // एक व्हेरिएबल ssss नावाचा तयार केला.
+        //त्याची सुरुवातीची value रिकामी string '' आहे.
+        //पुढे आपण यात <option> टॅग्स टाकणार आहोत.
 
-            if (item == 'India') {    
-                ssss = ''
+        function changeitem(item) {
+            //changeitem नावाची function बनवली आहे.
+            // हिला item नावाचा parameter मिळतो.
+            // ही function select dropdown बदलल्यावर call केली जाते
+
+            if (item == 'India')
+            // तपासत आहे की item ची value "India" आहे का.
+            // जर होय असेल तर पुढचा कोड चालेल.
+            // म्हणजे function सध्या फक्त "India" निवडल्यावर काम करते.
+            {
+                var ssss = '';
+                // ssss परत एकदा रिकामा केला जातो.
+                // आता यात नवीन <option> टाकले जातील.
                 var ww = document.getElementById('tow');
+                // HTML मधून id="tow" असलेला element घेतो.
+                // बहुतेक हा <select> dropdown असेल.
+                // तो element ww मध्ये ठेवतो.
                 india.forEach((i) => {
                     ssss += `<option>${i.name}</option>`
-                })
+                });
+                // india नावाच्या array मधल्या प्रत्येक i object वर loop चालतो.
+                // प्रत्येकासाठी <option> बनवतो आणि i.name मध्ये value टाकतो.
                 ww.innerHTML = ssss;
+                // शेवटी ssss मध्ये तयार झालेले <option> ww मध्ये (म्हणजेच tow dropdown मध्ये) टाकतो.
+                // त्यामुळे dropdown मध्ये राज्यांची नावे दिसायला लागतात.
             }
 
 
-            if (item == 'China') {
-                ssss = ''
-                var ww = document.getElementById('tow');
-                chann.forEach((i) => {
-                    ssss += `<option>${i.name}</option>`
-                })
-                ww.innerHTML = ssss;
-            }
 
-            if (item == 'United States') {
-                ssss = ''
-                var ww = document.getElementById('tow');
-                uk.forEach((i) => {
-                    ssss += `<option>${i.name}</option>`
-                })
-                ww.innerHTML = ssss;
-            }
         }
 
 
 
 
-// other program
-
-
-
-
+        function sta(item)
+        // sta नावाची function आहे.
+        // item parameter म्हणजे user ने dropdown मधून कोणते value निवडले ते.
+        {
+            if (item == 'Maharashtra')
+            // जर user ने "Maharashtra" निवडले तर पुढचा कोड चालतो.
+            {
+                var ddd = '';
+                // ddd नावाचा रिकामा string तयार करतो.
+                // यात आपण <option> टॅग एकत्र करून ठेवणार आहोत.
+                var ds = document.getElementById('three');
+                // HTML मध्ये id="three" असलेला element (बहुदा <select>) घेतो.
+                // तो ds नावाच्या variable मध्ये ठेवतो.
+                Maharashtra.forEach((i) => {
+                    ddd += `<option>${i.name}</option>`
+                });
+                // Maharashtra array वर loop चालतो.
+                // प्रत्येक जिल्ह्याचे नाव (i.name) घेऊन <option> टॅग बनवतो.
+                // ते ddd या string मध्ये जोडत जातो.
+                ds.innerHTML = ddd;
+                // शेवटी ddd मधले सारे <option> टॅग three dropdown मध्ये टाकले जातात.
+                // म्हणजे user ला Maharashtra मधले जिल्हे दिसायला लागतात.
+            }
+        //     if (item == 'Andhra Pradesh') {
+        //         var ddd = '';
+        //         var ds = document.getElementById('three');
+        //         AndhraPradesh.forEach((i) => {
+        //             ddd += `<option>${i.name}</option>`
+        //         });
+        //         ds.innerHTML = ddd;
+        //     }
+        // }
 
         var s = document.getElementById('one');
 
@@ -99,10 +135,10 @@
         function ss() {
             countries.forEach((i) => {
                 aa += `<option>${i.name}</option>`
-            })
+            });
             s.innerHTML = aa;
         }
-        ss()
+        ss();
     </script>
 </body>
 

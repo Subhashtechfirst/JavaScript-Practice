@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="class" onchange="getsingleclas(event.target.value)"></select>
+    <select id="students"> </select>
+
+
+    <script>
+
+
+
+
+
+
+
+
+
+
+        let Class = [
+            // Class 1
+            { id: 1, name: "Aarav", class: "1", age: 6, marks: 78 },
+            { id: 2, name: "Vihaan", class: "1", age: 6, marks: 65 },
+            { id: 3, name: "Aditya", class: "1", age: 7, marks: 80 },
+            { id: 4, name: "Ishaan", class: "1", age: 6, marks: 72 },
+            { id: 5, name: "Kabir", class: "1", age: 7, marks: 69 },
+            { id: 6, name: "Arjun", class: "1", age: 6, marks: 74 },
+            { id: 7, name: "Reyansh", class: "1", age: 6, marks: 82 },
+            { id: 8, name: "Krishna", class: "1", age: 7, marks: 77 },
+            { id: 9, name: "Rudra", class: "1", age: 6, marks: 68 },
+            { id: 10, name: "Shivansh", class: "1", age: 7, marks: 71 },
+
+            // Class 2
+            { id: 11, name: "Advika", class: "2", age: 7, marks: 75 },
+            { id: 12, name: "Anaya", class: "2", age: 7, marks: 69 },
+            { id: 13, name: "Diya", class: "2", age: 8, marks: 82 },
+            { id: 14, name: "Ira", class: "2", age: 8, marks: 71 },
+            { id: 15, name: "Myra", class: "2", age: 7, marks: 76 },
+            { id: 16, name: "Sara", class: "2", age: 8, marks: 80 },
+            { id: 17, name: "Aadhya", class: "2", age: 7, marks: 67 },
+            { id: 18, name: "Pari", class: "2", age: 8, marks: 79 },
+            { id: 19, name: "Riya", class: "2", age: 7, marks: 70 },
+            { id: 20, name: "Zara", class: "2", age: 8, marks: 73 },
+
+            // Class 3
+            { id: 21, name: "Aryan", class: "3", age: 8, marks: 84 },
+            { id: 22, name: "Vivaan", class: "3", age: 8, marks: 72 },
+            { id: 23, name: "Samar", class: "3", age: 9, marks: 81 },
+            { id: 24, name: "Laksh", class: "3", age: 9, marks: 77 },
+            { id: 25, name: "Om", class: "3", age: 8, marks: 69 },
+            { id: 26, name: "Kabir", class: "3", age: 9, marks: 73 },
+            { id: 27, name: "Manav", class: "3", age: 8, marks: 88 },
+            { id: 28, name: "Shaurya", class: "3", age: 9, marks: 74 },
+            { id: 29, name: "Rohan", class: "3", age: 8, marks: 79 },
+            { id: 30, name: "Harsh", class: "3", age: 9, marks: 71 },
+
+            // Class 4
+            { id: 31, name: "Anvi", class: "4", age: 9, marks: 78 },
+            { id: 32, name: "Prisha", class: "4", age: 9, marks: 82 },
+            { id: 33, name: "Navya", class: "4", age: 10, marks: 75 },
+            { id: 34, name: "Tara", class: "4", age: 10, marks: 80 },
+            { id: 35, name: "Meera", class: "4", age: 9, marks: 77 },
+            { id: 36, name: "Kiara", class: "4", age: 9, marks: 83 },
+            { id: 37, name: "Naina", class: "4", age: 10, marks: 74 },
+            { id: 38, name: "Saanvi", class: "4", age: 9, marks: 81 },
+            { id: 39, name: "Trisha", class: "4", age: 10, marks: 70 },
+            { id: 40, name: "Avni", class: "4", age: 9, marks: 79 },
+
+            // Class 5
+            { id: 41, name: "Dev", class: "5", age: 10, marks: 82 },
+            { id: 42, name: "Nikhil", class: "5", age: 10, marks: 74 },
+            { id: 43, name: "Rajat", class: "5", age: 11, marks: 79 },
+            { id: 44, name: "Sahil", class: "5", age: 10, marks: 85 },
+            { id: 45, name: "Yash", class: "5", age: 11, marks: 77 },
+            { id: 46, name: "Tanish", class: "5", age: 10, marks: 81 },
+            { id: 47, name: "Vikram", class: "5", age: 11, marks: 73 },
+            { id: 48, name: "Raghav", class: "5", age: 10, marks: 88 },
+            { id: 49, name: "Aman", class: "5", age: 11, marks: 76 },
+            { id: 50, name: "Kunal", class: "5", age: 10, marks: 80 },
+
+            // Class 6
+            { id: 51, name: "Harshit", class: "6", age: 11, marks: 84 },
+            { id: 52, name: "Mohit", class: "6", age: 11, marks: 78 },
+            { id: 53, name: "Ritik", class: "6", age: 12, marks: 82 },
+            { id: 54, name: "Aayush", class: "6", age: 11, marks: 76 },
+            { id: 55, name: "Naman", class: "6", age: 12, marks: 88 },
+            { id: 56, name: "Siddharth", class: "6", age: 11, marks: 73 },
+            { id: 57, name: "Deepak", class: "6", age: 11, marks: 81 },
+            { id: 58, name: "Rohit", class: "6", age: 12, marks: 79 },
+            { id: 59, name: "Manish", class: "6", age: 11, marks: 85 },
+            { id: 60, name: "Vivek", class: "6", age: 12, marks: 77 },
+
+            // Class 7
+            { id: 61, name: "Aditi", class: "7", age: 12, marks: 80 },
+            { id: 62, name: "Sneha", class: "7", age: 12, marks: 83 },
+            { id: 63, name: "Pooja", class: "7", age: 13, marks: 79 },
+            { id: 64, name: "Kriti", class: "7", age: 12, marks: 85 },
+            { id: 65, name: "Shreya", class: "7", age: 13, marks: 77 },
+            { id: 66, name: "Radhika", class: "7", age: 12, marks: 82 },
+            { id: 67, name: "Neha", class: "7", age: 13, marks: 81 },
+            { id: 68, name: "Divya", class: "7", age: 12, marks: 78 },
+            { id: 69, name: "Priya", class: "7", age: 13, marks: 80 },
+            { id: 70, name: "Ankita", class: "7", age: 12, marks: 84 },
+
+            // Class 8
+            { id: 71, name: "Raj", class: "8", age: 13, marks: 82 },
+            { id: 72, name: "Sameer", class: "8", age: 13, marks: 79 },
+            { id: 73, name: "Abhay", class: "8", age: 14, marks: 85 },
+            { id: 74, name: "Saurabh", class: "8", age: 13, marks: 77 },
+            { id: 75, name: "Nitesh", class: "8", age: 14, marks: 83 },
+            { id: 76, name: "Akhil", class: "8", age: 13, marks: 81 },
+            { id: 77, name: "Ashish", class: "8", age: 14, marks: 78 },
+            { id: 78, name: "Parth", class: "8", age: 13, marks: 80 },
+            { id: 79, name: "Mukul", class: "8", age: 14, marks: 84 },
+            { id: 80, name: "Gaurav", class: "8", age: 13, marks: 76 },
+
+            // Class 9
+            { id: 81, name: "Anmol", class: "9", age: 14, marks: 85 },
+            { id: 82, name: "Varun", class: "9", age: 14, marks: 79 },
+            { id: 83, name: "Tarun", class: "9", age: 15, marks: 83 },
+            { id: 84, name: "Kartik", class: "9", age: 14, marks: 77 },
+            { id: 85, name: "Rakesh", class: "9", age: 15, marks: 81 },
+            { id: 86, name: "Suresh", class: "9", age: 14, marks: 80 },
+            { id: 87, name: "Dinesh", class: "9", age: 15, marks: 78 },
+            { id: 88, name: "Mahesh", class: "9", age: 14, marks: 82 },
+            { id: 89, name: "Lokesh", class: "9", age: 15, marks: 76 },
+            { id: 90, name: "Ramesh", class: "9", age: 14, marks: 84 },
+
+            // Class 10
+            { id: 91, name: "Asha", class: "10", age: 15, marks: 83 },
+            { id: 92, name: "Sunita", class: "10", age: 15, marks: 79 },
+            { id: 93, name: "Geeta", class: "10", age: 16, marks: 85 },
+            { id: 94, name: "Lata", class: "10", age: 15, marks: 77 },
+            { id: 95, name: "Pinky", class: "10", age: 16, marks: 82 },
+            { id: 96, name: "Kavita", class: "10", age: 15, marks: 81 },
+            { id: 97, name: "Seema", class: "10", age: 16, marks: 78 },
+            { id: 98, name: "Rekha", class: "10", age: 15, marks: 80 },
+            { id: 99, name: "Babita", class: "10", age: 16, marks: 84 },
+            { id: 100, name: "Mamta", class: "10", age: 15, marks: 76 },
+        ];
+
+
+        let uniqueClasses = [...new Set(Class.map(s => s.class))];
+        console.log(uniqueClasses);
+
+        let tenthClass = []
+        function getsingleclas(clas) {
+            tenthClass = Class.filter(s => s.class === clas);
+
+            var classDropdown1 = document.getElementById("students");
+            var htmlForDropdown1 = '';
+            tenthClass.forEach((i) => {
+                htmlForDropdown1 += `<option value="${i.name}">${i.name} </option>`
+            })
+            classDropdown1.innerHTML = htmlForDropdown1;
+        }
+
+        var classDropdown = document.getElementById("class");
+        var htmlForDropdown = '';
+        uniqueClasses.forEach((i) => {
+            htmlForDropdown += `<option value="${i}">${i} Class</option>`
+        })
+        classDropdown.innerHTML = htmlForDropdown;
+
+
+
+
+
+    </script>
+</body>
+
+</html>

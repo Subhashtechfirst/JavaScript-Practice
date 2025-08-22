@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class & Students Dropdown</title>
+</head>
+
+<body>
+    <!-- Class Select -->
+    <select id="classes" onchange="changeitem(event.target.value)"></select>
+    <!-- Student Select -->
+    <select id="students"></select>
+
+    <script>
+        // Classes
+        let Class = [
+            { name: "Select Class" }, { name: "First Class" }, { name: "Second Class" },
+            { name: "Third Class" }, { name: "Fourth Class" }, { name: "Fifth Class" }
+        ];
+
+        // Students
+        let FirstClassStudentName = [
+            { name: "Aarav" }, { name: "Vihaan" }, { name: "Aditya" }, { name: "Ishaan" }, { name: "Kabir" }
+        ];
+
+        let SecondClassStudentName = [
+            { name: "Advika" }, { name: "Anaya" }, { name: "Diya" }, { name: "Ira" }, { name: "Myra" }
+        ];
+
+        let ThirdClassStudentName = [   // ✅ आता capital T वापरलाय
+            { name: "Aryan" }, { name: "Vivaan" }, { name: "Samar" }, { name: "Laksh" }, { name: "Om" }
+        ];
+
+        let FourthClassStudentName = [
+            { name: "Anvi" }, { name: "Prisha" }, { name: "Navya" }, { name: "Tara" }, { name: "Meera" }
+        ];
+
+        let FifthClassStudentName = [
+            { name: "Dev" }, { name: "Nikhil" }, { name: "Rajat" }, { name: "Sahil" }, { name: "Yash" }
+        ];
+
+        // Load Classes in Dropdown
+        function loadClasses() {
+            let sdrop = document.getElementById('classes');
+            let options = '';
+            Class.forEach((i) => {
+                options += `<option>${i.name}</option>`;
+            });
+            sdrop.innerHTML = options;
+        }
+
+        // Change Students Based on Class
+        function changeitem(item) {
+            let sdrop = document.getElementById('students');
+            let options = '';
+
+            if (item == "First Class") {
+                FirstClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Second Class") {
+                SecondClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Third Class") {   // ✅ आता match होईल
+                ThirdClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Fourth Class") {
+                FourthClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            if (item == "Fifth Class") {
+                FifthClassStudentName.forEach((i) => {
+                    options += `<option>${i.name}</option>`;
+                });
+            }
+
+            sdrop.innerHTML = options;
+        }
+
+        // Initial Load
+        loadClasses();
+    </script>
+</body>
+
+</html>

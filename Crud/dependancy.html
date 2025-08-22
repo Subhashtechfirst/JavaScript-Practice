@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Country → State → District</h2>
+
+  <select id="country"></select>
+  <select id="state"></select>
+  <select id="district"></select>
+
+    <script>
+        let world = [
+    {
+        country: "India",
+        states: [
+            {
+                name: "Maharashtra",
+                districts: [
+                    { name: "Pune" },
+                    { name: "Mumbai" },
+                    { name: "Nagpur" },
+                    { name: "Nashik" },
+                    { name: "Aurangabad" }
+                ]
+            },
+            {
+                name: "Andhra Pradesh",
+                districts: [
+                    { name: "Visakhapatnam" },
+                    { name: "Vijayawada" },
+                    { name: "Guntur" },
+                    { name: "Nellore" },
+                    { name: "Kurnool" }
+                ]
+            },
+            {
+                name: "Madhya Pradesh",
+                districts: [
+                    { name: "Bhopal" },
+                    { name: "Indore" },
+                    { name: "Jabalpur" },
+                    { name: "Gwalior" },
+                    { name: "Ujjain" }
+                ]
+            }
+        ]
+    },
+    {
+        country: "United States",
+        states: [
+            {
+                name: "California",
+                districts: [
+                    { name: "Los Angeles" },
+                    { name: "San Diego" },
+                    { name: "San Francisco" }
+                ]
+            },
+            {
+                name: "Texas",
+                districts: [
+                    { name: "Houston" },
+                    { name: "Dallas" },
+                    { name: "Austin" }
+                ]
+            }
+        ]
+    },
+    {
+        country: "China",
+        states: [
+            {
+                name: "Guangdong",
+                districts: [
+                    { name: "Guangzhou" },
+                    { name: "Shenzhen" },
+                    { name: "Dongguan" }
+                ]
+            },
+            {
+                name: "Beijing",
+                districts: [
+                    { name: "Chaoyang" },
+                    { name: "Haidian" },
+                    { name: "Dongcheng" }
+                ]
+            }
+        ]
+    }
+];
+
+   // Select elements
+    let countrySelect = document.getElementById("country");
+    let stateSelect = document.getElementById("state");
+    let districtSelect = document.getElementById("district");
+
+    // Populate Countries
+    function loadCountries() {
+      countrySelect.innerHTML = `<option>Select Country</option>`;
+      world.forEach(c => {
+        countrySelect.innerHTML += `<option>${c.country}</option>`;
+      });
+    }
+
+    // Populate States based on country
+    countrySelect.addEventListener("change", function () {
+      let selectedCountry = world.find(c => c.country === this.value);
+      stateSelect.innerHTML = `<option>Select State</option>`;
+      districtSelect.innerHTML = `<option>Select District</option>`; // reset districts
+
+      if (selectedCountry) {
+        selectedCountry.states.forEach(s => {
+          stateSelect.innerHTML += `<option>${s.name}</option>`;
+        });
+      }
+    });
+
+    // Populate Districts based on state
+    stateSelect.addEventListener("change", function () {
+      let selectedCountry = world.find(c => c.country === countrySelect.value);
+      let selectedState = selectedCountry?.states.find(s => s.name === this.value);
+      districtSelect.innerHTML = `<option>Select District</option>`;
+
+      if (selectedState) {
+        selectedState.districts.forEach(d => {
+          districtSelect.innerHTML += `<option>${d.name}</option>`;
+        });
+      }
+    });
+
+    // Initialize
+    loadCountries();
+    </script>
+</body>
+</html>

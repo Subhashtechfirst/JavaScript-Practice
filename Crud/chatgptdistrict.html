@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select name="" id="one" onchange="changeitem(event.target.value)"></select>
+    <select name="" id="tow"></select>
+
+    <select name="" id="three"></select>
+    <script>
+
+        let countries = [
+            { name: "Select Country" },
+            { name: "India" },
+            { name: "United States" },
+            { name: "China" },
+
+        ];
+
+        let india = [
+            {name: "Select State"},
+  { name: "Andhra Pradesh" },
+  { name: "Arunachal Pradesh" },
+  { name: "Assam" },
+  { name: "Bihar" },
+  { name: "Chhattisgarh" },
+  { name: "Goa" },
+  { name: "Gujarat" },
+  { name: "Haryana" },
+  { name: "Himachal Pradesh" },
+  { name: "Jharkhand" },
+  { name: "Karnataka" },
+  { name: "Kerala" },
+  { name: "Madhya Pradesh" },
+  { name: "Maharashtra" },
+  { name: "Manipur" },
+  { name: "Meghalaya" },
+  { name: "Mizoram" },
+  { name: "Nagaland" },
+  { name: "Odisha" },
+  { name: "Punjab" },
+  { name: "Rajasthan" },
+  { name: "Sikkim" },
+  { name: "Tamil Nadu" },
+  { name: "Telangana" },
+  { name: "Tripura" },
+  { name: "Uttar Pradesh" },
+  { name: "Uttarakhand" },
+  { name: "West Bengal" }
+];
+
+        let chann = [
+         {name: "Select State"},
+  // Provinces (23)
+  { name: "Anhui" },
+  { name: "Fujian" },
+  { name: "Gansu" },
+  { name: "Guangdong" },
+  { name: "Guizhou" },
+  { name: "Hainan" },
+  { name: "Hebei" },
+  { name: "Heilongjiang" },
+  { name: "Henan" },
+  { name: "Hubei" },
+  { name: "Hunan" },
+  { name: "Jiangsu" },
+  { name: "Jiangxi" },
+  { name: "Jilin" },
+  { name: "Liaoning" },
+  { name: "Qinghai" },
+  { name: "Shaanxi" },
+  { name: "Shandong" },
+  { name: "Shanxi" },
+  { name: "Sichuan" },
+  { name: "Taiwan" }, // claimed by China
+  { name: "Yunnan" },
+  { name: "Zhejiang" },
+
+  // Autonomous Regions (5)
+  { name: "Guangxi Zhuang" },
+  { name: "Inner Mongolia" },
+  { name: "Ningxia Hui" },
+  { name: "Tibet (Xizang)" },
+  { name: "Xinjiang Uyghur" },
+
+  // Municipalities (4)
+  { name: "Beijing" },
+  { name: "Chongqing" },
+  { name: "Shanghai" },
+  { name: "Tianjin" },
+
+  // Special Administrative Regions (2)
+  { name: "Hong Kong" },
+  { name: "Macau" }
+];
+
+        let uk = [
+        { name: "Select State"},
+  { name: "Alabama" },
+  { name: "Alaska" },
+  { name: "Arizona" },
+  { name: "Arkansas" },
+  { name: "California" },
+  { name: "Colorado" },
+  { name: "Connecticut" },
+  { name: "Delaware" },
+  { name: "Florida" },
+  { name: "Georgia" },
+  { name: "Hawaii" },
+  { name: "Idaho" },
+  { name: "Illinois" },
+  { name: "Indiana" },
+  { name: "Iowa" },
+  { name: "Kansas" },
+  { name: "Kentucky" },
+  { name: "Louisiana" },
+  { name: "Maine" },
+  { name: "Maryland" },
+  { name: "Massachusetts" },
+  { name: "Michigan" },
+  { name: "Minnesota" },
+  { name: "Mississippi" },
+  { name: "Missouri" },
+  { name: "Montana" },
+  { name: "Nebraska" },
+  { name: "Nevada" },
+  { name: "New Hampshire" },
+  { name: "New Jersey" },
+  { name: "New Mexico" },
+  { name: "New York" },
+  { name: "North Carolina" },
+  { name: "North Dakota" },
+  { name: "Ohio" },
+  { name: "Oklahoma" },
+  { name: "Oregon" },
+  { name: "Pennsylvania" },
+  { name: "Rhode Island" },
+  { name: "South Carolina" },
+  { name: "South Dakota" },
+  { name: "Tennessee" },
+  { name: "Texas" },
+  { name: "Utah" },
+  { name: "Vermont" },
+  { name: "Virginia" },
+  { name: "Washington" },
+  { name: "West Virginia" },
+  { name: "Wisconsin" },
+  { name: "Wyoming" }
+];
+
+        var ssss = ''
+        function changeitem(item) {
+            // alert(item)
+
+            if (item == 'India') {    
+                ssss = ''
+                var ww = document.getElementById('tow');
+                india.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+
+
+            if (item == 'China') {
+                ssss = ''
+                var ww = document.getElementById('tow');
+                chann.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+
+            if (item == 'United States') {
+                ssss = ''
+                var ww = document.getElementById('tow');
+                uk.forEach((i) => {
+                    ssss += `<option>${i.name}</option>`
+                })
+                ww.innerHTML = ssss;
+            }
+        }
+
+
+
+
+// other program
+
+
+        var s = document.getElementById('one');
+
+        var aa = ''
+        function ss() {
+            countries.forEach((i) => {
+                aa += `<option>${i.name}</option>`
+            })
+            s.innerHTML = aa;
+        }
+        ss()
+    </script>
+</body>
+
+</html>
