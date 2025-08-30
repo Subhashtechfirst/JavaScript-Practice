@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div></div>
+        <ul></ul>
+    </nav>
+    <section class="services">
+
+    </section>
+    <div class="product"></div>
+
+    <script>
+        var navItems = ['Home', 'About', 'Services', 'Blog', 'Contact', 'Login', 'Sign Up'];
+        var ul = document.querySelector('nav ul');
+        navItems.forEach(function (item) {
+            var li = document.createElement('li');
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+
+        var nav = document.querySelector('nav div');
+        var img = document.createElement('img');
+        img.src = 'https://www.pngitem.com/pimgs/m/480-4801679_landscape-company-logo-ideas-joy-studio-design-gallery.png';
+        img.width = 100;
+        img.height = 25;
+        nav.appendChild(img);
+
+        var services = ['Web Development', 'App Development', 'SEO Optimization', 'Digital Marketing', 'Graphic Design'];
+        var servicesSection = document.querySelector('.services');
+        var ulServices = document.createElement('ul');
+        services.forEach(function (service) {
+            var li = document.createElement('li');
+            li.textContent = service;
+            ulServices.appendChild(li);
+        });
+        servicesSection.appendChild(ulServices);
+
+
+
+
+    </script>
+</body>
+
+</html>
