@@ -15,10 +15,12 @@
 
     <h2 id="heading">Hello, DOM!</h2>
 
-    <button onclick="changeText()">Change Text</button>
-    <button onclick="changeColor()">Change Color</button>
-    <button onclick="changeStyle()">Change Style</button>
-    <button onclick="addMarquee()">Add Marquee</button>
+
+    <button onclick="addMarquee()">Left</button>
+    <button onclick="addMarquee1()">Right</button>
+    <button onclick="addMarquee2()">Up</button>
+    <button onclick="addMarquee3()"> Down</button>
+    <button onclick="addBothMarquees()">Both</button>
 
     <div id="container"></div>
 
@@ -44,13 +46,85 @@
             heading.style.textAlign = "center";
         }
 
+
+        // Both moving marquee
+
+        function addBothMarquees() {
+            // 1️⃣ Left moving marquee
+            let marqueeLeft = document.createElement("marquee");
+            marqueeLeft.innerText = " This is a left-moving marquee ";
+            marqueeLeft.setAttribute("direction", "left");
+            marqueeLeft.setAttribute("scrollamount", "8");
+            marqueeLeft.style.fontSize = "50px";
+            marqueeLeft.style.color = "blue";
+            document.getElementById("container").appendChild(marqueeLeft);
+
+            // 2️⃣ Right moving marquee
+            let marqueeRight = document.createElement("marquee");
+            marqueeRight.innerText = " This is a right-moving marquee ";
+            marqueeRight.setAttribute("direction", "right");
+            marqueeRight.setAttribute("scrollamount", "8");
+            marqueeRight.style.fontSize = "80px";
+            marqueeRight.style.color = "red";
+            document.getElementById("container").appendChild(marqueeRight);
+
+            // 2️⃣ Up moving marquee
+            let marqueeUp = document.createElement("marquee");
+            marqueeRight.innerText = " This is a right-moving marquee ";
+            marqueeRight.setAttribute("direction", "up");
+            marqueeRight.setAttribute("scrollamount", "8");
+            marqueeRight.style.fontSize = "80px";
+            marqueeRight.style.color = "red";
+            document.getElementById("container").appendChild(marqueeRight);
+        }
+
         // 4. Add marquee
         function addMarquee() {
             let marquee = document.createElement("marquee");
             marquee.innerText = " This is a marquee added with DOM ";
             marquee.setAttribute("direction", "left");
             marquee.setAttribute("scrollamount", "8"); // speed
-            // marquue.style.fontSize = "50px";
+            marquee.style.fontSize = "50px";
+            document.getElementById("container").appendChild(marquee);
+
+
+        }
+        function addMarquee1() {
+            let marquee = document.createElement("marquee");
+            marquee.innerText = " This is a marquee added with DOM ";
+            marquee.setAttribute("direction", "right");
+            marquee.setAttribute("scrollamount", "8"); // speed
+            marquee.style.fontSize = "50px";
+            document.getElementById("container").appendChild(marquee);
+
+        }
+        function addMarquee2() {
+            let marquee = document.createElement("marquee");
+            marquee.innerText = " This is a marquee added with DOM ";
+            marquee.setAttribute("direction", "up");
+            marquee.setAttribute("scrollamount", "8"); // speed
+            marquee.style.fontSize = "50px";
+            // Center horizontally
+            marquee.style.display = "block";
+            marquee.style.margin = "0 auto";
+            marquee.style.width = "fit-content"; // adjusts width to text
+            // Set height so it starts from bottom
+            marquee.style.height = "400px"; // optional: container height
+            document.getElementById("container").appendChild(marquee);
+
+        }
+        function addMarquee3() {
+            let marquee = document.createElement("marquee");
+            marquee.innerText = " This is a marquee added with DOM ";
+            marquee.setAttribute("direction", "down");
+            marquee.setAttribute("scrollamount", "8"); // speed
+            marquee.style.fontSize = "50px";
+            // Center horizontally
+            marquee.style.display = "block";
+            marquee.style.margin = "0 auto";
+            marquee.style.width = "fit-content"; // adjusts width to text
+            // Set height so it starts from bottom
+            marquee.style.height = "400px"; // optional: container height
             document.getElementById("container").appendChild(marquee);
 
         }
