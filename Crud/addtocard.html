@@ -55,15 +55,13 @@
         products.forEach((i, index) => {
             productHTML += `
               <div class="row">
-                <div class="col-md-4 border"> ${i.name}</div>
-                <div class="col-md-4 border">${i.price}</div>
+                <div class="col-md-4 text-center border"> ${i.name}</div>
+                <div class="col-md-4 text-center border">${i.price}</div>
                 <div class="col-md-4 border"> <button onclick='addTo(${index})' class="btn btn-info btn-sm m-2">Add To Card</button></div>
             </div>
             `
         })
         document.getElementById('product').innerHTML = productHTML;
-
-
 
         var addToCard = [];
 
@@ -77,17 +75,15 @@
             addToCard.forEach((i, index) => {
                 htmll += `
               <div class="row">
-                <div class="col-md-4 border"> ${i.name}</div>
-                <div class="col-md-4 border">${i.price}</div>
-                <div class="col-md-4 border"> <button onclick='removeee(${index})' class="btn btn-danger btn-sm m-2">remove</button></div>
+                <div class="col-md-4 text-center border"> ${i.name}</div>
+                <div class="col-md-4 text-center  border">${i.price}</div>
+                <div class="col-md-4 center border"> <button onclick='removeee(${index})' class="btn btn-danger btn-sm m-2">remove</button></div>
             </div>
            
             `
             })
             document.getElementById('crad').innerHTML = htmll;
             document.getElementsByTagName('span')[0].innerText = total
-
-
         }
 
         function removeee(ind) {

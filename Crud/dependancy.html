@@ -11,6 +11,7 @@
   <select id="country"></select>
   <select id="state"></select>
   <select id="district"></select>
+  <select id="taluka"></select>
 
     <script>
         let world = [
@@ -97,6 +98,7 @@
     let countrySelect = document.getElementById("country");
     let stateSelect = document.getElementById("state");
     let districtSelect = document.getElementById("district");
+    let TalukaSelect = document.getElementById("taluka");
 
     // Populate Countries
     function loadCountries() {
@@ -111,6 +113,7 @@
       let selectedCountry = world.find(c => c.country === this.value);
       stateSelect.innerHTML = `<option>Select State</option>`;
       districtSelect.innerHTML = `<option>Select District</option>`; // reset districts
+
 
       if (selectedCountry) {
         selectedCountry.states.forEach(s => {
